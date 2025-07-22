@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, Search, Code, Tag } from "lucide-react";
+import { Search, Code } from "lucide-react";
 
 // Demo data for solutions
 const demoSolutions = [
