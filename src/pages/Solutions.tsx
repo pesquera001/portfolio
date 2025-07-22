@@ -28,9 +28,8 @@ const demoSolutions = [
 const languages = ["all", "python", "javascript", "typescript", "bash", "sql", "other"];
 
 const Solutions: React.FC = () => {
-  const [solutions, setSolutions] = useState(demoSolutions);
+  const [solutions] = useState(demoSolutions);
   const [filteredSolutions, setFilteredSolutions] = useState(demoSolutions);
-  const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("all");
 
@@ -108,17 +107,7 @@ const Solutions: React.FC = () => {
 
         {/* Solutions List */}
         <AnimatePresence mode="wait">
-          {isLoading ? (
-            <div className="space-y-8">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="bg-white p-8 border border-metallic-silver/20 rounded-lg">
-                  <div className="h-6 bg-light-steel-gray/20 mb-4 animate-pulse rounded"></div>
-                  <div className="h-4 bg-light-steel-gray/20 w-3/4 mb-4 animate-pulse rounded"></div>
-                  <div className="h-32 bg-light-steel-gray/20 animate-pulse rounded"></div>
-                </div>
-              ))}
-            </div>
-          ) : filteredSolutions.length === 0 ? (
+          {filteredSolutions.length === 0 ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
