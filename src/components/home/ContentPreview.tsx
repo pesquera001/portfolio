@@ -37,11 +37,11 @@ const ContentPreview: React.FC = () => (
             className={`rounded-lg shadow-lg p-8 flex flex-col justify-between ${preview.color} text-white`}
           >
             <div>
-              <h2 className="text-2xl font-semibold mb-4">{preview.title}</h2>
-              <p className="text-metallic-silver mb-8">{preview.summary}</p>
+              <h2 className="text-2xl font-semibold mb-4 font-serif">{preview.title}</h2>
+              <p className="text-metallic-silver mb-8 font-sans">{preview.summary}</p>
             </div>
             <Link to={preview.link} className="inline-block mt-auto">
-              <button className="bg-white text-cobalt-blue font-medium px-6 py-2 rounded-lg hover:bg-cobalt-blue hover:text-white border border-cobalt-blue transition-colors">
+              <button className="bg-white text-cobalt-blue font-medium px-6 py-2 rounded-lg hover:bg-cobalt-blue hover:text-white border border-cobalt-blue transition-colors font-sans">
                 Explore
               </button>
             </Link>
