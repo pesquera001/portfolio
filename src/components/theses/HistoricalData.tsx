@@ -13,7 +13,7 @@ export default function HistoricalData({ fundName }: { fundName: string }) {
 
   return (
     <section>
-        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">
+        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight font-display">
           Historical Data
         </h2>
       <div className="border-b border-border-gray mb-8">

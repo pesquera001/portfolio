@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Jost", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], // ABC Diatype substitute
+        serif: ["Merriweather", "serif"], // Tiempos substitute
+        display: ["Sora", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         'steel-gray': '#43494F',

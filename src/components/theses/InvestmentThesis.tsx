@@ -11,7 +11,7 @@ export default function InvestmentThesis({ thesis }: { thesis: { title: string; 
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl font-bold text-white mb-6 tracking-tight font-display">
             {thesis.title}
           </h2>
           <div className="text-lg text-steel-gray leading-relaxed">

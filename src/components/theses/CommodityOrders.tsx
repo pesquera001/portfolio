@@ -38,39 +38,42 @@ export default function CommodityOrders({ fundName }: { fundName: string }) {
   if (orders.length === 0) return <div className="text-center p-8 text-steel-gray/80">No order history found for this fund.</div>;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="bg-card-navy border border-border-gray overflow-hidden"
-    >
-      <table className="min-w-full text-sm">
-        <thead>
-          <tr className="bg-deep-navy-blue">
-            <th className="font-semibold text-steel-gray px-4 py-2 text-left">Date</th>
-            <th className="font-semibold text-steel-gray px-4 py-2 text-left">Commodity</th>
-            <th className="font-semibold text-steel-gray px-4 py-2 text-left">Action</th>
-            <th className="font-semibold text-steel-gray px-4 py-2 text-right">Quantity</th>
-            <th className="font-semibold text-steel-gray px-4 py-2 text-right">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order, idx) => (
-            <tr key={idx} className="text-white border-t border-border-gray">
-              <td className="px-4 py-2">{format(new Date(order.order_date), 'yyyy-MM-dd')}</td>
-              <td className="px-4 py-2 font-medium">{order.commodity}</td>
-              <td className="px-4 py-2">
-                <span className={`flex items-center gap-1 font-semibold ${order.action === 'Buy' ? 'text-green-400' : 'text-red-400'}`}>
-                  {order.action === 'Buy' ? <ArrowUp className="w-3 h-3" /> : <ArrowDown className="w-3 h-3" />}
-                  {order.action}
-                </span>
-              </td>
-              <td className="px-4 py-2 text-right">{order.quantity.toLocaleString()}</td>
-              <td className="px-4 py-2 text-right font-mono text-xs">${order.price.toFixed(2)}</td>
+    <>
+      <h3 className="text-xl font-bold mb-4 font-display">Commodity Order History</h3>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-card-navy border border-border-gray overflow-hidden"
+      >
+        <table className="min-w-full text-sm">
+          <thead>
+            <tr className="bg-deep-navy-blue">
+              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Date</th>
+              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Commodity</th>
+              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Action</th>
+              <th className="font-semibold text-steel-gray px-4 py-2 text-right">Quantity</th>
+              <th className="font-semibold text-steel-gray px-4 py-2 text-right">Price</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </motion.div>
+          </thead>
+          <tbody>
+            {orders.map((order, idx) => (
+              <tr key={idx} className="text-white border-t border-border-gray">
+                <td className="px-4 py-2">{format(new Date(order.order_date), 'yyyy-MM-dd')}</td>
+                <td className="px-4 py-2 font-medium">{order.commodity}</td>
+                <td className="px-4 py-2">
+                  <span className={`flex items-center gap-1 font-semibold ${order.action === 'Buy' ? 'text-green-400' : 'text-red-400'}`}>
+                    {order.action === 'Buy' ? <ArrowUp className="w-3 h-3" /> : <ArrowDown className="w-3 h-3" />}
+                    {order.action}
+                  </span>
+                </td>
+                <td className="px-4 py-2 text-right">{order.quantity.toLocaleString()}</td>
+                <td className="px-4 py-2 text-right font-mono text-xs">${order.price.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </motion.div>
+    </>
   );
 }

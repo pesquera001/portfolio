@@ -27,7 +27,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
           </div>
 
           <div className="p-10 flex-grow flex flex-col">
-            <h3 className="text-2xl font-bold text-steel-gray mb-2 font-sans uppercase tracking-tight">
+            <h3 className="text-2xl font-bold text-steel-gray mb-2 font-display uppercase tracking-tight">
               {area.title}
             </h3>
             <p className="text-sm font-bold text-cobalt-blue mb-4 uppercase tracking-wider font-sans">
@@ -87,7 +87,7 @@ export default function ContentPreview() {
           className="text-center mb-20"
         >
           <div className="w-24 h-1 bg-cobalt-blue mx-auto mb-10"></div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-steel-gray mb-8 tracking-tight font-sans uppercase">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-steel-gray mb-8 tracking-tight font-display uppercase">
             Core Competencies
           </h2>
           <p className="text-2xl text-metallic-silver max-w-2xl mx-auto leading-relaxed font-sans font-medium">

@@ -10,7 +10,7 @@ export default function DiligenceStrategy({ content }: { content: string }) {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">
+        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight font-display">
           Diligence & Strategy Playbook
         </h2>
         <div className="prose max-w-none text-steel-gray">
