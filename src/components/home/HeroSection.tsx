@@ -30,13 +30,13 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
         >
           finance professional<br />
-          <span className="block text-cobalt-blue font-extrabold mt-2 font-sans">& technical analyst</span>
+          <span className="block text-cobalt-blue font-extrabold mt-2">& technical analyst</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="max-w-2xl mx-auto text-2xl md:text-3xl text-metallic-silver leading-relaxed mb-12 font-sans font-medium"
+          className="max-w-2xl mx-auto text-2xl md:text-3xl text-metallic-silver leading-relaxed mb-12 font-medium"
         >
           Focused on private equity, management consulting, and defense technologies.<br />
           Delivering quantitative solutions and strategic investment analysis.
