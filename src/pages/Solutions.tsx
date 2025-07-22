@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Code } from "lucide-react";
+import CopyBlock from "../components/shared/CopyBlock";
 
 // Demo data for solutions
 const demoSolutions = [
@@ -64,7 +65,7 @@ const Solutions: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-          <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-tight font-sans">
             Projects
           </h1>
           <p className="text-lg text-metallic-silver max-w-2xl mx-auto leading-relaxed">
@@ -134,7 +135,7 @@ const Solutions: React.FC = () => {
                     <div className="flex-1 mb-4 md:mb-0">
                       <div className="flex items-center gap-3 mb-2">
                         <Code className="w-5 h-5 text-cobalt-blue" />
-                        <h2 className="text-2xl font-semibold text-steel-gray">
+                        <h2 className="text-2xl font-normal text-steel-gray font-sans">
                           {solution.title}
                         </h2>
                       </div>
@@ -158,13 +159,11 @@ const Solutions: React.FC = () => {
                     </div>
                   )}
                   <div className="mb-6">
-                    <pre className="bg-deep-navy-blue text-white rounded-lg p-4 overflow-x-auto text-sm font-mono">
-                      {solution.code}
-                    </pre>
+                    <CopyBlock content={solution.code} language={solution.language} />
                   </div>
                   {solution.commentary && (
                     <div className="bg-light-steel-gray/5 p-6 border border-metallic-silver/20 rounded-lg">
-                      <h3 className="text-sm font-semibold text-cobalt-blue mb-3 tracking-wider uppercase">
+                      <h3 className="text-sm font-normal text-cobalt-blue mb-3 tracking-wider uppercase font-sans">
                         Approach & Commentary
                       </h3>
                       <p className="text-light-steel-gray leading-relaxed">
