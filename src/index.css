@@ -9,4 +9,11 @@
   code, pre, .font-mono {
     font-family: 'IBM Plex Mono', monospace !important;
   }
+  p, span, li, small, .subtext, .subtitle, .description, .meta, .caption, .lead, .text-sm, .text-xs {
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 400 !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif !important;
+  }
 }
