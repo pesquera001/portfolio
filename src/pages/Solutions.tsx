@@ -64,7 +64,7 @@ const Solutions: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-          <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-serif">
+          <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-sans">
             Projects
           </h1>
           <p className="text-lg text-metallic-silver max-w-2xl mx-auto leading-relaxed">
@@ -134,7 +134,7 @@ const Solutions: React.FC = () => {
                     <div className="flex-1 mb-4 md:mb-0">
                       <div className="flex items-center gap-3 mb-2">
                         <Code className="w-5 h-5 text-cobalt-blue" />
-                        <h2 className="text-2xl font-semibold text-steel-gray font-serif">
+                        <h2 className="text-2xl font-semibold text-steel-gray font-sans">
                           {solution.title}
                         </h2>
                       </div>

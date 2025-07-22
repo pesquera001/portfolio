@@ -66,7 +66,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-serif">
+            <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-sans">
               Aidan Pesquera
             </h1>
             <p className="text-xl text-metallic-silver max-w-3xl mx-auto leading-relaxed">
@@ -86,7 +86,7 @@ export default function About() {
             viewport={{ once: true }}
             className="bg-white p-12 border border-metallic-silver/20"
           >
-            <h2 className="text-3xl font-semibold text-steel-gray mb-8 font-serif">
+            <h2 className="text-3xl font-semibold text-steel-gray mb-8 font-sans">
               Quantitative Precision. Strategic Execution.
             </h2>
             <div className="grid md:grid-cols-2 gap-12 text-light-steel-gray leading-relaxed">
@@ -122,7 +122,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-serif">
+            <h2 className="text-4xl font-light text-white mb-6 font-sans">
               Core Competencies
             </h2>
           </motion.div>
@@ -142,7 +142,7 @@ export default function About() {
                     <div className="w-12 h-12 bg-cobalt-blue flex items-center justify-center">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-steel-gray font-serif">
+                    <h3 className="text-xl font-semibold text-steel-gray font-sans">
                       {skill.category}
                     </h3>
                   </div>
@@ -174,7 +174,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-serif">
+            <h2 className="text-4xl font-light text-white mb-6 font-sans">
               Professional Experience
             </h2>
           </motion.div>
@@ -189,7 +189,7 @@ export default function About() {
                 className="bg-white p-8 border-l-4 border-cobalt-blue"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="text-2xl font-semibold text-steel-gray font-serif">
+                  <h3 className="text-2xl font-semibold text-steel-gray font-sans">
                     {exp.title}
                   </h3>
                   <span className="text-sm text-cobalt-blue font-medium bg-cobalt-blue/10 px-3 py-1 mt-2 md:mt-0 font-sans">
@@ -219,7 +219,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-serif">
+            <h2 className="text-4xl font-light text-white mb-6 font-sans">
               Certifications & Licenses
             </h2>
           </motion.div>
@@ -251,7 +251,7 @@ export default function About() {
             viewport={{ once: true }}
             className="bg-white p-12 border border-metallic-silver/20"
           >
-            <h2 className="text-4xl font-light text-steel-gray mb-6 font-serif">
+            <h2 className="text-4xl font-light text-steel-gray mb-6 font-sans">
               Ready for New Opportunities
             </h2>
             <p className="text-light-steel-gray mb-8 max-w-2xl mx-auto leading-relaxed font-sans">

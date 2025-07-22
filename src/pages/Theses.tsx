@@ -12,7 +12,7 @@ export default function ThesesPage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter font-serif">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter font-sans">
                 Investment Theses
               </h1>
               <p className="text-lg text-steel-gray max-w-3xl mx-auto font-sans">
