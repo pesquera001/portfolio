@@ -24,13 +24,13 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 w-full max-w-7xl px-8 grid grid-cols-1 place-items-center" style={{paddingTop: '8vh', paddingBottom: '8vh'}}>
         <motion.h1
-          className="text-6xl md:text-8xl font-extrabold tracking-tight leading-tight mb-10 text-white uppercase font-display"
+          className="text-6xl md:text-8xl font-extrabold tracking-tight leading-tight mb-10 text-white font-sans"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Finance Professional<br />
-          <span className="block text-cobalt-blue font-extrabold mt-2 font-display">& Technical Analyst</span>
+          finance professional<br />
+          <span className="block text-cobalt-blue font-extrabold mt-2 font-sans">& technical analyst</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

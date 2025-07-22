@@ -7,8 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], // ABC Diatype substitute
-        serif: ["Merriweather", "serif"], // Tiempos substitute
-        display: ["Sora", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
         'steel-gray': '#43494F',

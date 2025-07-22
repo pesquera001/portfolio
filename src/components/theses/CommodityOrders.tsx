@@ -39,7 +39,7 @@ export default function CommodityOrders({ fundName }: { fundName: string }) {
 
   return (
     <>
-      <h3 className="text-xl font-bold mb-4 font-display">Commodity Order History</h3>
+      <h3 className="text-xl font-bold mb-4 font-sans">Commodity Order History</h3>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
