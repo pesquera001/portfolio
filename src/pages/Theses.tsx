@@ -1,4 +1,3 @@
-import React from 'react';
 import FundTabs from '../components/theses/FundTabs';
 import { motion } from 'framer-motion';
 
