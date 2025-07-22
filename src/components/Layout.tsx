@@ -20,7 +20,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex items-center justify-between h-20">
             {/* Logo/Monogram */}
             <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 bg-cobalt-blue flex items-center justify-center mr-3 rounded-lg">
+              <div className="w-10 h-10 bg-cobalt-blue flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-xl">A</span>
               </div>
               <span className="text-xl font-semibold tracking-tight text-white">
@@ -43,7 +43,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               ))}
             </div>
             <div className="hidden md:flex items-center">
-              <button className="bg-cobalt-blue hover:bg-cobalt-blue-alt text-white font-medium text-sm px-6 py-2 rounded-lg transition-colors">Contact</button>
+              <button className="bg-cobalt-blue hover:bg-cobalt-blue-alt text-white font-medium text-sm px-6 py-2 transition-colors">Contact</button>
             </div>
             {/* Mobile menu button (not implemented yet) */}
             <div className="md:hidden">
@@ -64,7 +64,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-cobalt-blue flex items-center justify-center mr-3 rounded-lg">
+                <div className="w-8 h-8 bg-cobalt-blue flex items-center justify-center mr-3">
                   <span className="text-white font-bold text-lg">A</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white">Aidan Pesquera</h3>
