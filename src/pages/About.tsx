@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Briefcase, Code, TrendingUp, Shield, Award, Target } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Briefcase, Code, TrendingUp, Shield, Award } from "lucide-react";
+import Button from "../components/ui/Button";
 
 export default function About() {
   const skills = [
