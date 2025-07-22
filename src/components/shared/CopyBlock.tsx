@@ -1,31 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Copy, Check } from "lucide-react";
-
-const SyntaxHighlighter = ({ code, language }: { code: string; language: string }) => {
-  const highlight = (text: string) => {
-    if (language === 'text') {
-      return text;
-    }
-    return text.replace(
-      /\b(import|from|class|def|return|const|let|var|function|new|async|await|if|else|for|of|in|export|default)\b/g,
-      '<span style="color: var(--cobalt-blue)">$&</span>'
-    ).replace(
-      /([=<>{}()[\].,:;+-/*%&|!~^?])/g,
-      '<span style="color: var(--light-steel-gray)">$&</span>'
-    ).replace(
-      /(["'`].*?["'`])/g,
-      '<span style="color: #22c55e">$&</span>' // Green for strings
-    );
-  };
-
-  return (
-    <pre
-      className="text-sm font-mono leading-relaxed text-steel-gray"
-      dangerouslySetInnerHTML={{ __html: highlight(code) }}
-    />
-  );
-};
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function CopyBlock({ content, language = "text" }: { content: string; language?: string }) {
   const [copied, setCopied] = useState(false);
@@ -42,9 +19,9 @@ export default function CopyBlock({ content, language = "text" }: { content: str
 
   return (
     <div className="relative group border border-metallic-silver/20">
-      <div className="bg-light-steel-gray/5 overflow-hidden">
+      <div className="bg-light-steel-gray/10 overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-2 bg-light-steel-gray/10 border-b border-metallic-silver/20">
+        <div className="flex items-center justify-between px-4 py-2 bg-light-steel-gray/20 border-b border-metallic-silver/20">
           <span className="font-mono text-xs font-medium text-light-steel-gray">
             {language.toUpperCase()}
           </span>
@@ -79,10 +56,26 @@ export default function CopyBlock({ content, language = "text" }: { content: str
             </AnimatePresence>
           </button>
         </div>
-        
         {/* Content */}
-        <div className="p-4 overflow-x-auto bg-white">
-          <SyntaxHighlighter code={content} language={language} />
+        <div className="p-0 bg-light-steel-gray/10">
+          <SyntaxHighlighter
+            language={language}
+            style={vscDarkPlus}
+            customStyle={{
+              background: 'rgba(108,117,125,0.10)',
+              fontSize: '1rem',
+              margin: 0,
+              borderRadius: 0,
+              padding: '1.5rem',
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+              overflow: 'visible',
+            }}
+            wrapLongLines={true}
+            showLineNumbers={false}
+          >
+            {content}
+          </SyntaxHighlighter>
         </div>
       </div>
     </div>
