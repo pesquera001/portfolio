@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html, body {
+    font-family: 'Inter', sans-serif !important;
+  }
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', monospace !important;
+  }
+}
