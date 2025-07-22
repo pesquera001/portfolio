@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], // ABC Diatype substitute
-        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+        sans: ["Inter"],
+        mono: ["IBM Plex Mono"],
       },
       colors: {
         'steel-gray': '#43494F',
@@ -21,9 +21,9 @@ module.exports = {
         'card-navy': '#23272F',
       },
       borderRadius: {
-        'lg': '12px',
-        'xl': '16px',
-        '2xl': '24px',
+        'lg': '0px',
+        'xl': '0px',
+        '2xl': '0px',
       },
     },
   },

@@ -64,7 +64,7 @@ const Solutions: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-          <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-sans">
+          <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
             Projects
           </h1>
           <p className="text-lg text-metallic-silver max-w-2xl mx-auto leading-relaxed">
@@ -77,7 +77,7 @@ const Solutions: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white p-6 mb-12 border border-metallic-silver/20 rounded-lg"
+          className="bg-white p-6 mb-12 border border-metallic-silver/20"
         >
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
@@ -128,13 +128,13 @@ const Solutions: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-8 border border-metallic-silver/20 hover:border-cobalt-blue/50 transition-colors duration-300 rounded-lg"
+                  className="bg-white p-8 border border-metallic-silver/20 hover:border-cobalt-blue/50 transition-colors duration-300"
                 >
                   <div className="flex flex-col md:flex-row md:items-start justify-between mb-6">
                     <div className="flex-1 mb-4 md:mb-0">
                       <div className="flex items-center gap-3 mb-2">
                         <Code className="w-5 h-5 text-cobalt-blue" />
-                        <h2 className="text-2xl font-semibold text-steel-gray font-sans">
+                        <h2 className="text-2xl font-semibold text-steel-gray">
                           {solution.title}
                         </h2>
                       </div>
