@@ -4,7 +4,7 @@ import ContentPreview from "../components/home/ContentPreview";
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-steel-gray min-h-screen">
+    <div style={{background:'#232a32'}}>
       <HeroSection />
       <ContentPreview />
     </div>

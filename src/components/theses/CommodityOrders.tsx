@@ -39,7 +39,7 @@ export default function CommodityOrders({ fundName }: { fundName: string }) {
 
   return (
     <>
-      <h3 className="text-xl font-bold mb-4 font-sans">Commodity Order History</h3>
+      <h3 className="text-xl font-normal mb-4 font-sans">Commodity Order History</h3>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,11 +49,11 @@ export default function CommodityOrders({ fundName }: { fundName: string }) {
         <table className="min-w-full text-sm">
           <thead>
             <tr className="bg-deep-navy-blue">
-              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Date</th>
-              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Commodity</th>
-              <th className="font-semibold text-steel-gray px-4 py-2 text-left">Action</th>
-              <th className="font-semibold text-steel-gray px-4 py-2 text-right">Quantity</th>
-              <th className="font-semibold text-steel-gray px-4 py-2 text-right">Price</th>
+              <th className="font-normal text-steel-gray px-4 py-2 text-left">Date</th>
+              <th className="font-normal text-steel-gray px-4 py-2 text-left">Commodity</th>
+              <th className="font-normal text-steel-gray px-4 py-2 text-left">Action</th>
+              <th className="font-normal text-steel-gray px-4 py-2 text-right">Quantity</th>
+              <th className="font-normal text-steel-gray px-4 py-2 text-right">Price</th>
             </tr>
           </thead>
           <tbody>

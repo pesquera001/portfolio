@@ -10,8 +10,8 @@ module.exports = {
         mono: ["IBM Plex Mono"],
       },
       colors: {
-        'steel-gray': '#43494F',
-        'light-steel-gray': '#6C757D',
+        'steel-gray': '#232a32',
+        'light-steel-gray': '#232a32',
         'cobalt-blue': '#2176FF',
         'cobalt-blue-alt': '#1577D9',
         'metallic-silver': '#B2B8BD',

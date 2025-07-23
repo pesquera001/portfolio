@@ -196,7 +196,7 @@ const Solutions: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-steel-gray font-sans">
+    <div className="min-h-screen bg-[#232a32] font-sans">
       <div className="max-w-7xl mx-auto px-8 py-24">
         {/* Header */}
         <motion.div

@@ -19,9 +19,9 @@ export default function CopyBlock({ content, language = "text" }: { content: str
 
   return (
     <div className="relative group border border-metallic-silver/20">
-      <div className="bg-light-steel-gray/10 overflow-hidden">
+      <div className="bg-[#232a32] overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-2 bg-light-steel-gray/20 border-b border-metallic-silver/20">
+        <div className="flex items-center justify-between px-4 py-2 bg-[#232a32] border-b border-metallic-silver/20">
           <span className="font-mono text-xs font-medium text-light-steel-gray">
             {language.toUpperCase()}
           </span>
@@ -57,12 +57,12 @@ export default function CopyBlock({ content, language = "text" }: { content: str
           </button>
         </div>
         {/* Content */}
-        <div className="p-0 bg-light-steel-gray/10">
+        <div className="p-0 bg-[#232a32]">
           <SyntaxHighlighter
             language={language}
             style={vscDarkPlus}
             customStyle={{
-              background: 'rgba(108,117,125,0.10)',
+              background: '#232a32',
               fontSize: '1rem',
               margin: 0,
               borderRadius: 0,

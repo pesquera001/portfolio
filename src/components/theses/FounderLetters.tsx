@@ -32,7 +32,7 @@ export default function FounderLetters({ fundName }: { fundName: string }) {
 
   return (
     <div className="space-y-px bg-border-gray">
-      <h3 className="text-xl font-bold mb-4 font-sans">Founder Letters</h3>
+      <h3 className="text-xl font-normal mb-4 font-sans">Founder Letters</h3>
       {letters.map((letter, index) => (
         <motion.div
           key={letter.title}

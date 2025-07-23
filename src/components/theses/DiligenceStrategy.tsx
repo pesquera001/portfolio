@@ -10,13 +10,13 @@ export default function DiligenceStrategy({ content }: { content: string }) {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl font-bold text-white mb-8 tracking-tight font-sans">
+        <h2 className="text-3xl font-normal text-white mb-8 tracking-tight font-sans">
           Diligence & Strategy Playbook
         </h2>
         <div className="prose max-w-none text-steel-gray">
           <ReactMarkdown
             components={{
-              h3: ({node, ...props}) => <h3 className="font-semibold !text-light-steel-gray mt-8 mb-4 text-lg" {...props} />, 
+              h3: ({node, ...props}) => <h3 className="font-normal !text-light-steel-gray mt-8 mb-4 text-lg" {...props} />, 
               li: ({node, ...props}) => <li className="!my-2" {...props} />,
             }}
           >
