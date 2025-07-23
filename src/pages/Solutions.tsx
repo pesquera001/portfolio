@@ -170,32 +170,6 @@ End Sub`,
 
 const languages = ["all", "python", "javascript", "typescript", "bash", "sql", "other"];
 
-function UsageToggle({ usage, code, language }: { usage: string; code: string; language: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="mb-4">
-      <button
-        type="button"
-        className="flex items-center gap-2 text-cobalt-blue font-mono text-sm focus:outline-none"
-        onClick={() => setOpen(v => !v)}
-      >
-        {open ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />} Usage
-      </button>
-      {open && (
-        <div className="mt-3 p-0 bg-light-steel-gray/20 border border-metallic-silver/20 font-mono text-steel-gray text-sm" style={{borderRadius: 0}}>
-          <div
-            className="overflow-y-auto overflow-x-hidden"
-            style={{ maxHeight: 'calc(1.5em * 7 + 2rem)', minHeight: 'calc(1.5em * 7)', background: 'inherit', borderRadius: 0 }}
-          >
-            <CopyBlock language={language} content={code} />
-          </div>
-          <div className="p-4 pt-2" style={{borderRadius: 0}}>{usage}</div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 const Solutions: React.FC = () => {
   const [solutions] = useState(demoSolutions);
   const [filteredSolutions, setFilteredSolutions] = useState(demoSolutions);
@@ -326,9 +300,21 @@ const Solutions: React.FC = () => {
                       </div>
                     </div>
                   )}
-                  <div className="mb-6">
-                    <CopyBlock content={solution.code} language={solution.language} />
-                  </div>
+                  {solution.featured ? (
+                    <div className="mb-6">
+                      <div
+                        className="overflow-y-auto overflow-x-hidden"
+                        style={{ maxHeight: 'calc(1.5em * 7 + 2rem)', minHeight: 'calc(1.5em * 7)', background: 'inherit', borderRadius: 0 }}
+                      >
+                        <CopyBlock content={solution.fullCode} language={solution.language} />
+                      </div>
+                      <div className="p-4 pt-2" style={{borderRadius: 0}}>{solution.usage}</div>
+                    </div>
+                  ) : (
+                    <div className="mb-6">
+                      <CopyBlock content={solution.code} language={solution.language} />
+                    </div>
+                  )}
                   {solution.commentary && (
                     <div className="bg-light-steel-gray/5 p-6 border border-metallic-silver/20 rounded-lg">
                       <h3 className="text-sm font-normal text-cobalt-blue mb-3 tracking-wider uppercase font-sans">
@@ -338,9 +324,6 @@ const Solutions: React.FC = () => {
                         {solution.commentary}
                       </p>
                     </div>
-                  )}
-                  {solution.featured && (
-                    <UsageToggle usage={solution.usage} code={solution.fullCode} language={solution.language} />
                   )}
                 </motion.div>
               ))}
