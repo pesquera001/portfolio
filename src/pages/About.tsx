@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import Button from "../components/ui/Button";
-import { ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
