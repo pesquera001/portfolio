@@ -1,276 +1,91 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Briefcase, Code, TrendingUp, Shield, Award } from "lucide-react";
 import Button from "../components/ui/Button";
+import { ArrowRight } from "lucide-react";
 
 export default function About() {
-  const skills = [
-    {
-      category: "Finance & Investment",
-      icon: TrendingUp,
-      items: ["Private Equity", "Portfolio Management", "Financial Modeling", "Due Diligence", "Risk Assessment", "Quantitative Analysis"]
-    },
-    {
-      category: "Technical & Quantitative",
-      icon: Code,
-      items: ["Python", "R", "SQL", "Financial Engineering", "Algorithmic Trading", "Data Analysis", "Automation", "API Integration"]
-    },
-    {
-      category: "Defense & Security",
-      icon: Shield,
-      items: ["Strategic Analysis", "Defense Technologies", "Cybersecurity", "Operational Security", "Risk Management", "Threat Assessment"]
-    },
-    {
-      category: "Management Consulting",
-      icon: Briefcase,
-      items: ["Strategic Planning", "Operations Optimization", "Market Analysis", "Process Improvement", "Stakeholder Management", "Executive Presentations"]
-    }
-  ];
-
-  const experience = [
-    {
-      title: "Investment Analyst",
-      company: "Private Equity Fund",
-      period: "2021 - Present",
-      description: "Lead investment analysis and due diligence for technology and defense sector investments. Developed proprietary models for portfolio optimization and risk assessment, generating consistent alpha across multiple funds."
-    },
-    {
-      title: "Quantitative Analyst",
-      company: "Asset Management Firm",
-      period: "2019 - 2021",
-      description: "Built algorithmic trading systems and risk management frameworks. Implemented automated portfolio rebalancing strategies that improved risk-adjusted returns by 18% while reducing operational overhead."
-    },
-    {
-      title: "Defense Technology Consultant",
-      company: "Defense Contractor",
-      period: "2017 - 2019",
-      description: "Provided strategic analysis on emerging defense technologies and cybersecurity frameworks. Evaluated operational security protocols and recommended technology adoption strategies for government clients."
-    }
-  ];
-
-  const certifications = [
-    "CFA Level II Candidate",
-    "FRM (Financial Risk Manager)",
-    "Security+ Certified",
-    "Series 7 & 63 Licensed"
-  ];
-
   return (
     <div className="min-h-screen bg-steel-gray font-sans">
-      {/* Hero Section */}
-      <section className="bg-light-steel-gray py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <motion.div
+      <section className="py-24">
+        <div className="max-w-3xl mx-auto px-8">
+          <motion.h1
+            className="text-4xl md:text-5xl font-normal text-white mb-8 font-sans"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h1 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-tight font-sans">
-              Aidan Pesquera
-            </h1>
-            <p className="text-xl text-metallic-silver max-w-3xl mx-auto leading-relaxed">
-              Finance professional and technical analyst focused on private equity, management consulting, and defense technologies.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-          {/* Left: Text Block */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            researcher. strategist-in-training. builder of frameworks that simulate the real world of private equity and defense innovation.
+          </motion.h1>
+          <motion.p
+            className="mb-8 text-lg text-metallic-silver font-mono"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <h2 className="text-3xl font-normal text-steel-gray mb-8 font-sans">
-              about me
-            </h2>
-            <p className="mb-6 font-mono text-lg text-steel-gray">
-              I’m a senior at Arizona State University with a focus on strategic research in private equity, operational consulting, and the defense sector. I specialize in building research-based models, diligence frameworks, and technical tools that help simulate real-world firm workflows—even before entering the field.
-            </p>
-            <p className="mb-6 font-mono text-lg text-steel-gray">
-              I believe in operating like a professional before becoming one. This site is a public workspace for that goal.
-            </p>
-          </motion.div>
-          {/* Right: Photo + Highlights */}
+            I’m a senior at Arizona State University studying Business Administration with a minor in Economics, with a growing focus on strategic research at the intersection of private capital, and strategic operations across defense and commercial domains. While I haven’t yet worked in the industry, I spend my time building simulations, reading internal decks and case studies, and reverse-engineering the processes that top firms use to make decisions.
+          </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center gap-8"
           >
-            {/* Headshot/editorial photo (AI-generated placeholder) */}
-            <div className="w-48 h-48 bg-light-steel-gray flex items-center justify-center overflow-hidden" style={{objectFit: 'cover'}}>
-              <img src="/public/headshot-placeholder.png" alt="Aidan Pesquera headshot" className="w-full h-full object-cover" />
-            </div>
-            {/* Highlights */}
-            <div className="w-full">
-              <h3 className="text-xl font-normal text-steel-gray mb-4 font-sans">highlights</h3>
-              <ul className="space-y-3 font-mono text-steel-gray text-base">
-                <li>Certifications: CFA Level II (in progress), FRM, Security+, Series 7 & 63</li>
-                <li>Systems/Tools: Custom diligence frameworks, PE ops models, defense-tech research tools</li>
-                <li>Books/Whitepapers: Deep reads on PE ops, defense innovation, and market structure</li>
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section className="bg-light-steel-gray py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
-              Core Competencies
-            </h2>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <motion.div
-                  key={skill.category}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white p-8 border border-metallic-silver/20"
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-cobalt-blue flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-normal text-steel-gray font-sans">
-                      {skill.category}
-                    </h3>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {skill.items.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className="px-3 py-2 bg-light-steel-gray/10 text-light-steel-gray text-sm border border-metallic-silver/10 font-sans"
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
-              Professional Experience
-            </h2>
-          </motion.div>
-          <div className="space-y-12">
-            {experience.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 border-l-4 border-cobalt-blue"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="text-2xl font-normal text-steel-gray font-sans">
-                    {exp.title}
-                  </h3>
-                  <span className="text-sm text-cobalt-blue font-medium bg-cobalt-blue/10 px-3 py-1 mt-2 md:mt-0 font-sans">
-                    {exp.period}
-                  </span>
-                </div>
-                <p className="text-cobalt-blue font-medium mb-4 font-sans">
-                  {exp.company}
-                </p>
-                <p className="text-light-steel-gray leading-relaxed font-sans">
-                  {exp.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="bg-light-steel-gray py-24">
-        <div className="max-w-4xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
-              Certifications & Licenses
-            </h2>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 border border-metallic-silver/20 flex items-center gap-4"
-              >
-                <Award className="w-6 h-6 text-cobalt-blue flex-shrink-0" />
-                <span className="text-steel-gray font-medium font-sans">{cert}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white p-12 border border-metallic-silver/20"
-          >
-            <h2 className="text-4xl font-normal text-steel-gray mb-6 font-sans">
-              Ready for New Opportunities
-            </h2>
-            <p className="text-light-steel-gray mb-8 max-w-2xl mx-auto leading-relaxed font-sans">
-              Seeking roles in private equity, management consulting, and defense contracting where I can apply my quantitative skills and strategic analysis expertise.
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">what drives me</h2>
+            <p className="mb-4 font-mono text-steel-gray">
+              I operate under a simple idea: Act like a professional before you become one.<br />That means I:
             </p>
-            <Button className="bg-cobalt-blue hover:bg-cobalt-blue-alt text-white font-medium text-base px-8 py-3 flex items-center gap-2 mx-auto font-sans">
-              Get In Touch
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
+              <li>Build mock investment theses using real-world data</li>
+              <li>Design diligence frameworks inspired by consulting playbooks</li>
+              <li>Create operational models that simulate PE-owned company growth</li>
+              <li>Read everything from KKR whitepapers to declassified DoD procurement memos</li>
+              <li>Use tools like Python, Notion, Airtable, and GPT-4 to bring ideas to life</li>
+            </ul>
+            <p className="mt-4 font-mono text-steel-gray">
+              My research is self-directed, but always tied to practical value creation — the kind of thinking used by operators and strategists in high-leverage environments.
+            </p>
+          </motion.div>
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">current projects (in progress)</h2>
+            <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
+              <li>Mock Fund I: A simulated investment strategy focused on dual-use aerospace and supply chain infrastructure.</li>
+              <li>Defense Tech Scoring Model: A framework to evaluate early-stage dual-use AI startups based on procurement viability and IP defensibility.</li>
+              <li>Value Creation Tracker: A Notion-based dashboard to simulate cost-reduction initiatives post-acquisition.</li>
+            </ul>
+          </motion.div>
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">where i’m headed</h2>
+            <p className="mb-4 font-mono text-steel-gray">
+              My goal is to work at the intersection of capital, operational design, and national strategy — whether that’s through private equity, consulting, or dual-use venture. I’m seeking internships, mentorships, or field-facing experiences that push me deeper into these environments.
+            </p>
+            <p className="font-mono text-steel-gray">
+              I’m not chasing a title — I’m chasing insight, responsibility, and long-term leverage.
+            </p>
+          </motion.div>
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">let’s connect</h2>
+            <p className="mb-4 font-mono text-steel-gray">
+              If you’re working in PE, strategy, or defense and have advice, opportunities, or even a reading list to share — I’d love to connect.
+            </p>
+            <div className="flex flex-col gap-2 font-mono">
+              <a href="mailto:aidan@yourdomain.com" className="underline text-cobalt-blue">aidan@yourdomain.com</a>
+              <a href="https://linkedin.com/in/aidanpesquera" className="underline text-cobalt-blue">LinkedIn</a>
+              <a href="/resume.pdf" className="underline text-cobalt-blue">View Resume</a>
+            </div>
           </motion.div>
         </div>
       </section>
