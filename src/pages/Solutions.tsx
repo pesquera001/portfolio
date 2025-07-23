@@ -1187,7 +1187,7 @@ const Solutions: React.FC = () => {
                     </div>
                   )}
                   {solution.featured ? (
-                    <div className="mb-6">
+                    <div>
                       <div
                         className="overflow-y-auto overflow-x-hidden"
                         style={{ maxHeight: 'calc(1.5em * 9 + 2rem)', minHeight: 'calc(1.5em * 9)', background: '#232a32', borderRadius: 0 }}
@@ -1197,7 +1197,7 @@ const Solutions: React.FC = () => {
                       <div className="p-4 pt-2" style={{borderRadius: 0}}>{solution.usage}</div>
                     </div>
                   ) : (
-                    <div className="mb-6">
+                    <div>
                       <div
                         className="overflow-y-auto overflow-x-hidden"
                         style={{ maxHeight: 'calc(1.5em * 9 + 2rem)', minHeight: 'calc(1.5em * 9)', background: '#232a32', borderRadius: 0 }}
@@ -1207,7 +1207,7 @@ const Solutions: React.FC = () => {
                     </div>
                   )}
                   {solution.commentary && (
-                    <div className="bg-light-steel-gray/5 p-6 border border-metallic-silver/20 rounded-lg">
+                    <div className="mt-6 bg-light-steel-gray/5 p-6 border border-metallic-silver/20 rounded-lg">
                       <h3 className="text-sm font-normal text-cobalt-blue mb-3 tracking-wider uppercase font-sans">
                         Approach & Commentary
                       </h3>
