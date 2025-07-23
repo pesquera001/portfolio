@@ -303,7 +303,7 @@ const Solutions: React.FC = () => {
                     <div className="mb-6">
                       <div
                         className="overflow-y-auto overflow-x-hidden"
-                        style={{ maxHeight: 'calc(1.5em * 7 + 2rem)', minHeight: 'calc(1.5em * 7)', background: 'inherit', borderRadius: 0 }}
+                        style={{ maxHeight: 'calc(1.5em * 7 + 2rem)', minHeight: 'calc(1.5em * 7)', background: '#232a32', borderRadius: 0 }}
                       >
                         <CopyBlock content={solution.fullCode} language={solution.language} />
                       </div>
