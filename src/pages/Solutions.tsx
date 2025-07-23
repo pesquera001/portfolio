@@ -755,7 +755,7 @@ End Sub`,
   {
     id: 5,
     title: "Debt Stress & Liquidity Analyzer",
-    summary: "An Excel VBA tool that evaluates a company’s financial health by analyzing debt levels, liquidity, cash flow, and bankruptcy risk. It calculates a distress score, assigns a risk category, and provides clear, data-driven insights to help investors quickly assess financial stability.",
+    summary: "An Excel VBA tool that evaluates a company's financial health by analyzing debt levels, liquidity, cash flow, and bankruptcy risk. It calculates a distress score, assigns a risk category, and provides clear, data-driven insights to help investors quickly assess financial stability.",
     code: `Sub AnalyzeSingleCompany()
     Dim ebitda As Double, interest As Double, debt As Double, cashFlow As Double
     Dim currentRatio As Double, altmanZ As Double, debtEquity As Double
@@ -1198,7 +1198,12 @@ const Solutions: React.FC = () => {
                     </div>
                   ) : (
                     <div className="mb-6">
-                      <CopyBlock content={solution.code} language={solution.language} />
+                      <div
+                        className="overflow-y-auto overflow-x-hidden"
+                        style={{ maxHeight: 'calc(1.5em * 9 + 2rem)', minHeight: 'calc(1.5em * 9)', background: '#232a32', borderRadius: 0 }}
+                      >
+                        <CopyBlock content={solution.code} language={solution.language} />
+                      </div>
                     </div>
                   )}
                   {solution.commentary && (
