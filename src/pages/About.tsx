@@ -11,15 +11,23 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Researcher. Strategist-in-Training. Builder of Frameworks That Simulate the Real World of Private Equity and Defense Innovation.
+            Aidan Pesquera
           </motion.h1>
-          <motion.p
-            className="mb-8 text-lg text-metallic-silver font-mono"
+          <motion.h2
+            className="text-2xl md:text-3xl font-normal text-cobalt-blue mb-6 font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            I’m a senior at Arizona State University studying Business Administration with a minor in Economics, with a growing focus on strategic research at the intersection of private capital, and strategic operations across defense and commercial domains. While I haven’t yet worked in the industry, I spend my time building simulations, reading internal decks and case studies, and reverse-engineering the processes that top firms use to make decisions.
+            Researcher at the Intersection of Private Markets and Defense.
+          </motion.h2>
+          <motion.p
+            className="mb-8 text-lg text-metallic-silver font-mono"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Senior at Arizona State University, studying Business Administration and Economics. Focused on strategic planning, defense innovation, and business advisory—building a portfolio that bridges analytical rigor with real-world insight across private capital and national security domains.
           </motion.p>
           <motion.div
             className="mb-12"
