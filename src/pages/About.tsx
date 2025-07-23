@@ -66,7 +66,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h1 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight font-sans">
+            <h1 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-tight font-sans">
               Aidan Pesquera
             </h1>
             <p className="text-xl text-metallic-silver max-w-3xl mx-auto leading-relaxed">
@@ -76,36 +76,46 @@ export default function About() {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* About Me Section */}
       <section className="py-24">
-        <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+          {/* Left: Text Block */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white p-12 border border-metallic-silver/20"
           >
-            <h2 className="text-3xl font-semibold text-steel-gray mb-8 font-sans">
-              Quantitative Precision. Strategic Execution.
+            <h2 className="text-3xl font-normal text-steel-gray mb-8 font-sans">
+              about me
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 text-light-steel-gray leading-relaxed">
-              <div>
-                <p className="mb-6">
-                  I specialize in the intersection of finance, technology, and defense, bringing quantitative rigor to investment decisions and strategic analysis. My expertise spans private equity, risk management, and defense technology evaluation.
-                </p>
-                <p>
-                  With a strong foundation in financial modeling and technical analysis, I deliver data-driven insights that support complex investment decisions and operational strategies.
-                </p>
-              </div>
-              <div>
-                <p className="mb-6">
-                  My background includes developing automated trading systems, conducting due diligence on defense technologies, and building risk assessment frameworks for institutional investors.
-                </p>
-                <p>
-                  I am actively pursuing opportunities in private equity, management consulting, and defense contracting where I can leverage my analytical skills and technical expertise.
-                </p>
-              </div>
+            <p className="mb-6 font-mono text-lg text-steel-gray">
+              I’m a senior at Arizona State University with a focus on strategic research in private equity, operational consulting, and the defense sector. I specialize in building research-based models, diligence frameworks, and technical tools that help simulate real-world firm workflows—even before entering the field.
+            </p>
+            <p className="mb-6 font-mono text-lg text-steel-gray">
+              I believe in operating like a professional before becoming one. This site is a public workspace for that goal.
+            </p>
+          </motion.div>
+          {/* Right: Photo + Highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center gap-8"
+          >
+            {/* Headshot/editorial photo (AI-generated placeholder) */}
+            <div className="w-48 h-48 bg-light-steel-gray flex items-center justify-center overflow-hidden" style={{objectFit: 'cover'}}>
+              <img src="/public/headshot-placeholder.png" alt="Aidan Pesquera headshot" className="w-full h-full object-cover" />
+            </div>
+            {/* Highlights */}
+            <div className="w-full">
+              <h3 className="text-xl font-normal text-steel-gray mb-4 font-sans">highlights</h3>
+              <ul className="space-y-3 font-mono text-steel-gray text-base">
+                <li>Certifications: CFA Level II (in progress), FRM, Security+, Series 7 & 63</li>
+                <li>Systems/Tools: Custom diligence frameworks, PE ops models, defense-tech research tools</li>
+                <li>Books/Whitepapers: Deep reads on PE ops, defense innovation, and market structure</li>
+              </ul>
             </div>
           </motion.div>
         </div>
@@ -122,7 +132,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-sans">
+            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
               Core Competencies
             </h2>
           </motion.div>
@@ -142,7 +152,7 @@ export default function About() {
                     <div className="w-12 h-12 bg-cobalt-blue flex items-center justify-center">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-steel-gray font-sans">
+                    <h3 className="text-xl font-normal text-steel-gray font-sans">
                       {skill.category}
                     </h3>
                   </div>
@@ -174,7 +184,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-sans">
+            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
               Professional Experience
             </h2>
           </motion.div>
@@ -189,7 +199,7 @@ export default function About() {
                 className="bg-white p-8 border-l-4 border-cobalt-blue"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="text-2xl font-semibold text-steel-gray font-sans">
+                  <h3 className="text-2xl font-normal text-steel-gray font-sans">
                     {exp.title}
                   </h3>
                   <span className="text-sm text-cobalt-blue font-medium bg-cobalt-blue/10 px-3 py-1 mt-2 md:mt-0 font-sans">
@@ -219,7 +229,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
-            <h2 className="text-4xl font-light text-white mb-6 font-sans">
+            <h2 className="text-4xl font-normal text-white mb-6 font-sans">
               Certifications & Licenses
             </h2>
           </motion.div>
@@ -251,7 +261,7 @@ export default function About() {
             viewport={{ once: true }}
             className="bg-white p-12 border border-metallic-silver/20"
           >
-            <h2 className="text-4xl font-light text-steel-gray mb-6 font-sans">
+            <h2 className="text-4xl font-normal text-steel-gray mb-6 font-sans">
               Ready for New Opportunities
             </h2>
             <p className="text-light-steel-gray mb-8 max-w-2xl mx-auto leading-relaxed font-sans">

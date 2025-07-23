@@ -27,7 +27,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
           </div>
 
           <div className="p-10 flex-grow flex flex-col">
-            <h3 className="text-2xl font-bold text-steel-gray mb-2 font-sans uppercase tracking-tight">
+            <h3 className="text-2xl font-normal text-steel-gray mb-2 font-sans uppercase tracking-tight">
               {area.title}
             </h3>
             <p className="text-sm font-bold text-cobalt-blue mb-4 uppercase tracking-wider font-sans">
@@ -50,27 +50,27 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
 export default function ContentPreview() {
   const contentAreas = [
     {
-      title: "Investment Theses",
-      subtitle: "Private Equity & Portfolio Management",
-      description: "Comprehensive fund strategies, diligence processes, and performance analysis across multiple investment vehicles.",
+      title: "Defense Tech Firm Analysis Framework",
+      subtitle: "Custom diligence for dual-use AI startups",
+      description: "Custom diligence framework for evaluating dual-use AI startups; built in Airtable + Python.",
       icon: TrendingUp,
-      path: createPageUrl("Theses"),
+      path: createPageUrl("Solutions"),
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop"
     },
     {
-      title: "Technical Solutions",
-      subtitle: "Quantitative Analysis & Automation",
-      description: "Advanced algorithms, financial models, and technical implementations for investment analysis and operational efficiency.",
+      title: "Operational Value-Creation Model (Private Equity)",
+      subtitle: "Simulated PE ops playbook",
+      description: "Simulated PE firm playbook based on McKinsey ops efficiency KPIs + Bain cost optimization cases.",
       icon: Code,
       path: createPageUrl("Solutions"),
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
     },
     {
-      title: "Defense & Security",
-      subtitle: "Strategic Analysis & Technologies",
-      description: "Insights into defense technologies, security frameworks, and strategic assessments for national security applications.",
+      title: "Aerospace Supply Chain Turnaround (Mock Fund)",
+      subtitle: "Post-COVID consolidation strategy",
+      description: "Target profile strategy focused on post-COVID supply chain consolidation using open-source financials.",
       icon: Shield,
-      path: createPageUrl("About"),
+      path: createPageUrl("Theses"),
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
     }
   ];
@@ -87,8 +87,8 @@ export default function ContentPreview() {
           className="text-center mb-20"
         >
           <div className="w-24 h-1 bg-cobalt-blue mx-auto mb-10"></div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-steel-gray mb-8 tracking-tight font-sans uppercase">
-            Core Competencies
+          <h2 className="text-5xl md:text-6xl font-normal text-steel-gray mb-8 tracking-tight font-sans uppercase">
+            Strategic Research & Tools
           </h2>
           <p className="text-2xl text-metallic-silver max-w-2xl mx-auto leading-relaxed font-sans font-medium">
             Specialized expertise in finance, technology, and defense sectors with quantitative analysis capabilities.

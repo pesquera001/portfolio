@@ -67,23 +67,23 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <div className="w-8 h-8 bg-cobalt-blue flex items-center justify-center mr-3">
                   <span className="text-white font-bold text-lg">A</span>
                 </div>
-                <h3 className="text-xl font-semibold text-white">Aidan Pesquera</h3>
+                <h3 className="text-xl font-normal text-white font-sans">Aidan Pesquera</h3>
               </div>
-              <p className="text-metallic-silver text-sm leading-relaxed max-w-sm">
-                Finance professional and technical analyst focused on investment strategies, defense technologies, and quantitative solutions.
+              <p className="text-metallic-silver text-sm leading-relaxed max-w-sm font-mono">
+                Open to internships, fellowships, or mentorship.<br />
+                <a href="/resume.pdf" className="underline text-cobalt-blue">View Resume</a>
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-white">Connect</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">LinkedIn</a>
-                <a href="#" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">GitHub</a>
-                <a href="#" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">Email</a>
+              <h4 className="font-normal mb-4 text-white font-sans">Contact</h4>
+              <div className="space-y-2 font-mono">
+                <a href="mailto:aidan.pesquera@email.com" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">aidan.pesquera@email.com</a>
+                <a href="https://linkedin.com/in/aidanpesquera" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">LinkedIn</a>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-white">Navigate</h4>
-              <div className="space-y-2">
+              <h4 className="font-normal mb-4 text-white font-sans">Navigate</h4>
+              <div className="space-y-2 font-mono">
                 {navigationItems.map(item => (
                   <Link key={item.name} to={item.path} className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">
                     {item.name}
@@ -93,7 +93,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
           <div className="border-t border-metallic-silver/20 mt-12 pt-8 text-center">
-            <p className="text-xs text-metallic-silver">
+            <p className="text-xs text-metallic-silver font-mono">
               © 2024 Aidan Pesquera. All rights reserved.
             </p>
           </div>
