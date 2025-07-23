@@ -329,6 +329,168 @@ End Sub`
     tags: ["typescript", "api", "finance"],
     commentary: "Abstracts away API differences and provides a unified data interface for analytics dashboards.",
   },
+  {
+    id: 4,
+    title: "Standard DCF Model",
+    summary: "An Excel VBA tool that generates a detailed 5-year discounted cash flow (DCF) model tailored for private equity valuation. Users input key assumptions — including revenue growth, margins, CapEx, working capital changes, tax rate, and discount rate — via a structured input section. The model forecasts operating cash flows, calculates free cash flow to firm (FCFF), discounts future cash flows using WACC, and computes terminal value with Gordon Growth. Outputs include enterprise value, equity value after net debt adjustment, and implied IRR estimates.",
+    code: `Sub GenerateDCFModel()
+    Dim ws As Worksheet
+    Dim i As Integer, startRow As Integer
+    ' ... (rest of code omitted for brevity, use full code from user) ...
+End Sub`,
+    commentary: "Paste this VBA code into an Excel module. Run the macro to build a fully formatted DCF worksheet, then update inputs to analyze valuation scenarios efficiently.",
+    tags: ["excel", "vba", "dcf", "valuation"],
+    language: "vb",
+    usage: "Paste this VBA code into an Excel module. Run the macro to build a fully formatted DCF worksheet, then update inputs to analyze valuation scenarios efficiently.",
+    fullCode: `Sub GenerateDCFModel()
+    Dim ws As Worksheet
+    Dim i As Integer, startRow As Integer
+    ' Delete sheet if it exists
+    On Error Resume Next
+    Application.DisplayAlerts = False
+    Worksheets("DCF Model").Delete
+    Application.DisplayAlerts = True
+    On Error GoTo 0
+    Set ws = ThisWorkbook.Worksheets.Add
+    ws.Name = "DCF Model"
+    ws.Range("A1").Value = "Private Equity Standard DCF Model"
+    ws.Range("A1").Font.Bold = True
+    ws.Range("A1").Font.Size = 16
+    ' ===== Input Assumptions Section =====
+    ws.Range("A3").Value = "Input Assumptions"
+    ws.Range("A3").Font.Bold = True
+    ws.Range("A3").Font.Size = 12
+    Dim assumptions As Variant
+    assumptions = Array( _
+        Array("Revenue CAGR (%)", 8), _
+        Array("EBITDA Margin (%)", 30), _
+        Array("Depreciation & Amortization ($M)", 5), _
+        Array("Capital Expenditures ($M)", 7), _
+        Array("Change in Net Working Capital ($M)", 2), _
+        Array("Tax Rate (%)", 25), _
+        Array("Discount Rate / WACC (%)", 10), _
+        Array("Terminal Growth Rate (%)", 3), _
+        Array("Net Debt ($M)", 50), _
+        Array("Shares Outstanding (M)", 10) _
+    )
+    startRow = 4
+    For i = LBound(assumptions) To UBound(assumptions)
+        ws.Cells(startRow + i, 1).Value = assumptions(i)(0)
+        ws.Cells(startRow + i, 2).Value = assumptions(i)(1)
+        ws.Cells(startRow + i, 2).NumberFormat = "0.00%"
+        Select Case assumptions(i)(0)
+            Case "Depreciation & Amortization ($M)", "Capital Expenditures ($M)", "Change in Net Working Capital ($M)", "Net Debt ($M)"
+                ws.Cells(startRow + i, 2).NumberFormat = "$#,##0,,\"M\""
+            Case "Shares Outstanding (M)"
+                ws.Cells(startRow + i, 2).NumberFormat = "#,##0"
+        End Select
+    Next i
+    Dim yearStart As Integer: yearStart = 2024
+    Dim forecastYears As Integer: forecastYears = 5
+    Dim yearRow As Integer: yearRow = startRow + UBound(assumptions) + 3
+    ws.Cells(yearRow, 2).Value = "Year"
+    ws.Cells(yearRow, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow, 3 + i).Value = yearStart + i
+        ws.Cells(yearRow, 3 + i).Font.Bold = True
+        ws.Cells(yearRow, 3 + i).HorizontalAlignment = xlCenter
+    Next i
+    ws.Cells(yearRow + 1, 2).Value = "Revenue ($M)"
+    ws.Cells(yearRow + 1, 2).Font.Bold = True
+    ws.Cells(yearRow + 1, 3).Value = 100
+    ws.Cells(yearRow + 1, 3).NumberFormat = "$#,##0,,\"M\""
+    For i = 1 To forecastYears - 1
+        ws.Cells(yearRow + 1, 3 + i).Formula = "=C" & (yearRow + 1) & "*(1+$B$4)"
+        ws.Cells(yearRow + 1, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 2, 2).Value = "EBITDA ($M)"
+    ws.Cells(yearRow + 2, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 2, 3 + i).Formula = "=C" & (yearRow + 1 + 0) + i & "*$B$5"
+        ws.Cells(yearRow + 2, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 3, 2).Value = "Depreciation & Amortization ($M)"
+    ws.Cells(yearRow + 3, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 3, 3 + i).Formula = "=$B$6"
+        ws.Cells(yearRow + 3, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 4, 2).Value = "EBIT ($M)"
+    ws.Cells(yearRow + 4, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 4, 3 + i).Formula = "=D" & (yearRow + 2) + i & "-D" & (yearRow + 3) + i
+        ws.Cells(yearRow + 4, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 5, 2).Value = "Taxes ($M)"
+    ws.Cells(yearRow + 5, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 5, 3 + i).Formula = "=D" & (yearRow + 4) + i & "*$B$7"
+        ws.Cells(yearRow + 5, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 6, 2).Value = "NOPAT ($M)"
+    ws.Cells(yearRow + 6, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 6, 3 + i).Formula = "=D" & (yearRow + 4) + i & "-D" & (yearRow + 5) + i
+        ws.Cells(yearRow + 6, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 7, 2).Value = "Capital Expenditures ($M)"
+    ws.Cells(yearRow + 7, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 7, 3 + i).Formula = "=$B$8"
+        ws.Cells(yearRow + 7, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 8, 2).Value = "Change in Net Working Capital ($M)"
+    ws.Cells(yearRow + 8, 2).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 8, 3 + i).Formula = "=$B$9"
+        ws.Cells(yearRow + 8, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 9, 2).Value = "Free Cash Flow to Firm ($M)"
+    ws.Range(ws.Cells(yearRow + 9, 2), ws.Cells(yearRow + 9, 2)).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 9, 3 + i).Formula = "=D" & (yearRow + 6) + i & "+D" & (yearRow + 3) + i & "-D" & (yearRow + 7) + i & "-D" & (yearRow + 8) + i
+        ws.Cells(yearRow + 9, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 10, 2).Value = "Discount Factor"
+    ws.Range(ws.Cells(yearRow + 10, 2), ws.Cells(yearRow + 10, 2)).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 10, 3 + i).Formula = "=(1+$B$10)^-" & (i + 1)
+        ws.Cells(yearRow + 10, 3 + i).NumberFormat = "0.0000"
+    Next i
+    ws.Cells(yearRow + 11, 2).Value = "PV of FCFF ($M)"
+    ws.Range(ws.Cells(yearRow + 11, 2), ws.Cells(yearRow + 11, 2)).Font.Bold = True
+    For i = 0 To forecastYears - 1
+        ws.Cells(yearRow + 11, 3 + i).Formula = "=D" & (yearRow + 9) + i & "*D" & (yearRow + 10) + i
+        ws.Cells(yearRow + 11, 3 + i).NumberFormat = "$#,##0,,\"M\""
+    Next i
+    ws.Cells(yearRow + 13, 2).Value = "Terminal Value ($M)"
+    ws.Cells(yearRow + 13, 2).Font.Bold = True
+    ws.Cells(yearRow + 13, 3).Formula = "=D" & (yearRow + 9 + forecastYears - 1) & "*(1+$B$11)/($B$10-$B$11)"
+    ws.Cells(yearRow + 13, 3).NumberFormat = "$#,##0,,\"M\""
+    ws.Cells(yearRow + 14, 2).Value = "PV of Terminal Value ($M)"
+    ws.Cells(yearRow + 14, 2).Font.Bold = True
+    ws.Cells(yearRow + 14, 3).Formula = "=D" & (yearRow + 13) & "/(1+$B$10)^" & forecastYears
+    ws.Cells(yearRow + 14, 3).NumberFormat = "$#,##0,,\"M\""
+    ws.Cells(yearRow + 16, 2).Value = "Enterprise Value ($M)"
+    ws.Cells(yearRow + 16, 2).Font.Bold = True
+    ws.Cells(yearRow + 16, 3).Formula = "=SUM(D" & (yearRow + 11) & ":H" & (yearRow + 11) & ")+D" & (yearRow + 14)
+    ws.Cells(yearRow + 16, 3).NumberFormat = "$#,##0,,\"M\""
+    ws.Cells(yearRow + 17, 2).Value = "Less: Net Debt ($M)"
+    ws.Cells(yearRow + 17, 2).Font.Bold = True
+    ws.Cells(yearRow + 17, 3).Formula = "=$B$12"
+    ws.Cells(yearRow + 17, 3).NumberFormat = "$#,##0,,\"M\""
+    ws.Cells(yearRow + 18, 2).Value = "Equity Value ($M)"
+    ws.Cells(yearRow + 18, 2).Font.Bold = True
+    ws.Cells(yearRow + 18, 3).Formula = "=D" & (yearRow + 16) & "-D" & (yearRow + 17)
+    ws.Cells(yearRow + 18, 3).NumberFormat = "$#,##0,,\"M\""
+    ws.Cells(yearRow + 19, 2).Value = "Implied IRR (%)"
+    ws.Cells(yearRow + 19, 2).Font.Bold = True
+    ws.Cells(yearRow + 19, 3).Formula = "=IRR(D" & (yearRow + 18) & ":D" & (yearRow + 18 + forecastYears - 1) & ")"
+    ws.Cells(yearRow + 19, 3).NumberFormat = "0.00%"
+    ws.Range("A1:F" & yearRow + 19).AutoFit
+    MsgBox "DCF Model worksheet generated successfully. Inputs are in columns A-B, forecasts in columns C-H, and calculations in columns I-L.", vbInformation
+End Sub`
+  },
   // Add more demo solutions as needed
 ];
 
