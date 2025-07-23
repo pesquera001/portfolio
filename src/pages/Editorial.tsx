@@ -37,11 +37,15 @@ const Editorial: React.FC = () => (
           <Link
             key={post.slug}
             to={`/article/${post.slug}`}
-            className="block border-b border-metallic-silver/20 pb-10 hover:bg-[#232a32]/80 transition-colors"
+            className="group block border-b border-metallic-silver/20 pb-10 hover:bg-[#232a32]/80 transition-colors"
             style={{borderRadius:0}}
           >
-            <h2 className="text-2xl md:text-3xl font-normal font-sans text-white mb-3">{post.title}</h2>
-            <p className="font-mono text-lg text-metallic-silver mb-2">{post.subtitle}</p>
+            <h2 className="text-2xl md:text-3xl font-normal font-sans text-white mb-3 transition-colors duration-200 group-hover:text-cobalt-blue">
+              {post.title}
+            </h2>
+            <p className="font-mono text-lg text-metallic-silver mb-2 transition-colors duration-200 group-hover:text-white">
+              {post.subtitle}
+            </p>
             {idx < blogPosts.length - 1 && (
               <div className="h-px w-full bg-metallic-silver/10 mt-10" style={{borderRadius:0}} />
             )}
