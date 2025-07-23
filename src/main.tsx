@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/theses" element={<Theses />} />
           <Route path="/editorial" element={<Editorial />} />
+          <Route path="/article/:slug" element={<Article />} />
           <Route path="/article" element={<Article />} />
         </Routes>
       </Layout>
