@@ -753,15 +753,305 @@ End Sub`,
 End Sub`,
   },
   {
-    id: "2",
-    title: "Market Data API Wrapper",
-    summary: "Reusable TypeScript module for fetching and normalizing financial market data from multiple APIs.",
-    code: `export async function fetchMarketData() {\n  // ...rest of code...\n}`,
-    language: "typescript",
-    tags: ["typescript", "api", "finance"],
-    commentary: "Abstracts away API differences and provides a unified data interface for analytics dashboards.",
+    id: 5,
+    title: "Debt Stress & Liquidity Analyzer",
+    summary: "An Excel VBA tool that evaluates a company’s financial health by analyzing debt levels, liquidity, cash flow, and bankruptcy risk. It calculates a distress score, assigns a risk category, and provides clear, data-driven insights to help investors quickly assess financial stability.",
+    code: `Sub AnalyzeSingleCompany()
+    Dim ebitda As Double, interest As Double, debt As Double, cashFlow As Double
+    Dim currentRatio As Double, altmanZ As Double, debtEquity As Double
+    Dim ebitdaMargin As Double, revenue As Double
+    Dim distressScore As Double
+    Dim flag As String
+    Dim insights As String
+    ebitda = Nz(Range("B3").Value)
+    interest = Nz(Range("B4").Value)
+    debt = Nz(Range("B5").Value)
+    cashFlow = Nz(Range("B6").Value)
+    currentRatio = Nz(Range("B7").Value)
+    altmanZ = Nz(Range("B8").Value)
+    debtEquity = Nz(Range("B9").Value)
+    ebitdaMargin = Nz(Range("B10").Value)
+    revenue = Nz(Range("B11").Value)
+    distressScore = 0
+    insights = ""
+    Dim interestCoverage As Double
+    If interest <> 0 Then
+        interestCoverage = ebitda / interest
+    ElseIf ebitda > 0 Then
+        interestCoverage = 100
+    Else
+        interestCoverage = 0
+    End If
+    Dim debtToEBITDA As Double
+    If ebitda <> 0 Then
+        debtToEBITDA = debt / ebitda
+    Else
+        debtToEBITDA = 100
+    End If
+    ' Interest Coverage
+    If interestCoverage < 1.5 Then
+        distressScore = distressScore + 25
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Very poor, risk of default" & vbNewLine
+    ElseIf interestCoverage < 3 Then
+        distressScore = distressScore + 10
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Moderate, monitor carefully" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Strong, manageable debt costs" & vbNewLine
+    End If
+    ' Debt to EBITDA
+    If debtToEBITDA > 6 Then
+        distressScore = distressScore + 25
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Very high leverage, elevated risk" & vbNewLine
+    ElseIf debtToEBITDA > 4 Then
+        distressScore = distressScore + 15
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - High leverage, consider debt reduction" & vbNewLine
+    ElseIf debtToEBITDA > 2 Then
+        distressScore = distressScore + 5
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Moderate leverage" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Low leverage, good flexibility" & vbNewLine
+    End If
+    ' Cash Flow
+    If cashFlow < 0 Then
+        distressScore = distressScore + 20
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Negative, liquidity risk" & vbNewLine
+    ElseIf cashFlow < ebitda * 0.5 Then
+        distressScore = distressScore + 8
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Low relative to EBITDA, monitor working capital" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Healthy cash flow" & vbNewLine
+    End If
+    ' Current Ratio
+    If currentRatio < 1 Then
+        distressScore = distressScore + 15
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Below 1, liquidity concerns" & vbNewLine
+    ElseIf currentRatio < 1.5 Then
+        distressScore = distressScore + 7
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Slightly low, monitor liquidity" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Good liquidity" & vbNewLine
+    End If
+    ' Altman Z-Score
+    If altmanZ < 1.8 Then
+        distressScore = distressScore + 20
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - High risk of bankruptcy" & vbNewLine
+    ElseIf altmanZ < 3 Then
+        distressScore = distressScore + 10
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - Moderate bankruptcy risk" & vbNewLine
+    Else
+        distressScore = distressScore - 10
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - Low bankruptcy risk" & vbNewLine
+    End If
+    ' Debt to Equity
+    If debtEquity > 3 Then
+        distressScore = distressScore + 15
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Very high leverage" & vbNewLine
+    ElseIf debtEquity > 2 Then
+        distressScore = distressScore + 8
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Elevated leverage" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Healthy leverage" & vbNewLine
+    End If
+    ' EBITDA Margin
+    If ebitdaMargin < 5 Then
+        distressScore = distressScore + 10
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Very low, operational inefficiency" & vbNewLine
+    ElseIf ebitdaMargin < 10 Then
+        distressScore = distressScore + 5
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Moderate" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Strong profitability" & vbNewLine
+    End If
+    ' Debt to Revenue
+    If revenue > 0 Then
+        Dim debtToRevenue As Double
+        debtToRevenue = debt / revenue
+        If debtToRevenue > 3 Then
+            distressScore = distressScore + 10
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Very high, unsustainable" & vbNewLine
+        ElseIf debtToRevenue > 2 Then
+            distressScore = distressScore + 5
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Elevated" & vbNewLine
+        Else
+            distressScore = distressScore - 3
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Manageable" & vbNewLine
+        End If
+    End If
+    ' Risk Flag
+    If distressScore >= 70 Then
+        flag = "High Risk"
+    ElseIf distressScore >= 40 Then
+        flag = "Moderate Risk"
+    Else
+        flag = "Low Risk"
+    End If
+    ' Output
+    Range("B13").Value = Round(distressScore, 2)
+    Range("B14").Value = flag
+    Range("B16").Value = insights
+    MsgBox "Analysis complete. Results in B13, B14, B16."
+End Sub
+
+Function Nz(val) As Double
+    If IsNumeric(val) Then Nz = val Else Nz = 0
+End Function
+`,
+    commentary: "Paste this VBA code into an Excel module. Run the macro to analyze company financials and generate a distress score with detailed insights.",
+    tags: ["excel", "vba", "liquidity", "risk", "analysis"],
+    language: "vb",
+    usage: "Paste this VBA code into an Excel module. Run the macro to analyze company financials and generate a distress score with detailed insights.",
+    fullCode: `Sub AnalyzeSingleCompany()
+    Dim ebitda As Double, interest As Double, debt As Double, cashFlow As Double
+    Dim currentRatio As Double, altmanZ As Double, debtEquity As Double
+    Dim ebitdaMargin As Double, revenue As Double
+    Dim distressScore As Double
+    Dim flag As String
+    Dim insights As String
+    ebitda = Nz(Range("B3").Value)
+    interest = Nz(Range("B4").Value)
+    debt = Nz(Range("B5").Value)
+    cashFlow = Nz(Range("B6").Value)
+    currentRatio = Nz(Range("B7").Value)
+    altmanZ = Nz(Range("B8").Value)
+    debtEquity = Nz(Range("B9").Value)
+    ebitdaMargin = Nz(Range("B10").Value)
+    revenue = Nz(Range("B11").Value)
+    distressScore = 0
+    insights = ""
+    Dim interestCoverage As Double
+    If interest <> 0 Then
+        interestCoverage = ebitda / interest
+    ElseIf ebitda > 0 Then
+        interestCoverage = 100
+    Else
+        interestCoverage = 0
+    End If
+    Dim debtToEBITDA As Double
+    If ebitda <> 0 Then
+        debtToEBITDA = debt / ebitda
+    Else
+        debtToEBITDA = 100
+    End If
+    ' Interest Coverage
+    If interestCoverage < 1.5 Then
+        distressScore = distressScore + 25
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Very poor, risk of default" & vbNewLine
+    ElseIf interestCoverage < 3 Then
+        distressScore = distressScore + 10
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Moderate, monitor carefully" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Interest Coverage: " & Format(interestCoverage, "0.00") & " - Strong, manageable debt costs" & vbNewLine
+    End If
+    ' Debt to EBITDA
+    If debtToEBITDA > 6 Then
+        distressScore = distressScore + 25
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Very high leverage, elevated risk" & vbNewLine
+    ElseIf debtToEBITDA > 4 Then
+        distressScore = distressScore + 15
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - High leverage, consider debt reduction" & vbNewLine
+    ElseIf debtToEBITDA > 2 Then
+        distressScore = distressScore + 5
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Moderate leverage" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Debt to EBITDA: " & Format(debtToEBITDA, "0.00") & " - Low leverage, good flexibility" & vbNewLine
+    End If
+    ' Cash Flow
+    If cashFlow < 0 Then
+        distressScore = distressScore + 20
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Negative, liquidity risk" & vbNewLine
+    ElseIf cashFlow < ebitda * 0.5 Then
+        distressScore = distressScore + 8
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Low relative to EBITDA, monitor working capital" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Operating Cash Flow: " & Format(cashFlow, "$#,##0") & " - Healthy cash flow" & vbNewLine
+    End If
+    ' Current Ratio
+    If currentRatio < 1 Then
+        distressScore = distressScore + 15
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Below 1, liquidity concerns" & vbNewLine
+    ElseIf currentRatio < 1.5 Then
+        distressScore = distressScore + 7
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Slightly low, monitor liquidity" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Current Ratio: " & Format(currentRatio, "0.00") & " - Good liquidity" & vbNewLine
+    End If
+    ' Altman Z-Score
+    If altmanZ < 1.8 Then
+        distressScore = distressScore + 20
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - High risk of bankruptcy" & vbNewLine
+    ElseIf altmanZ < 3 Then
+        distressScore = distressScore + 10
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - Moderate bankruptcy risk" & vbNewLine
+    Else
+        distressScore = distressScore - 10
+        insights = insights & "Altman Z-Score: " & Format(altmanZ, "0.00") & " - Low bankruptcy risk" & vbNewLine
+    End If
+    ' Debt to Equity
+    If debtEquity > 3 Then
+        distressScore = distressScore + 15
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Very high leverage" & vbNewLine
+    ElseIf debtEquity > 2 Then
+        distressScore = distressScore + 8
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Elevated leverage" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "Debt to Equity: " & Format(debtEquity, "0.00") & " - Healthy leverage" & vbNewLine
+    End If
+    ' EBITDA Margin
+    If ebitdaMargin < 5 Then
+        distressScore = distressScore + 10
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Very low, operational inefficiency" & vbNewLine
+    ElseIf ebitdaMargin < 10 Then
+        distressScore = distressScore + 5
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Moderate" & vbNewLine
+    Else
+        distressScore = distressScore - 5
+        insights = insights & "EBITDA Margin: " & Format(ebitdaMargin, "0.00") & "% - Strong profitability" & vbNewLine
+    End If
+    ' Debt to Revenue
+    If revenue > 0 Then
+        Dim debtToRevenue As Double
+        debtToRevenue = debt / revenue
+        If debtToRevenue > 3 Then
+            distressScore = distressScore + 10
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Very high, unsustainable" & vbNewLine
+        ElseIf debtToRevenue > 2 Then
+            distressScore = distressScore + 5
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Elevated" & vbNewLine
+        Else
+            distressScore = distressScore - 3
+            insights = insights & "Debt to Revenue: " & Format(debtToRevenue, "0.00") & " - Manageable" & vbNewLine
+        End If
+    End If
+    ' Risk Flag
+    If distressScore >= 70 Then
+        flag = "High Risk"
+    ElseIf distressScore >= 40 Then
+        flag = "Moderate Risk"
+    Else
+        flag = "Low Risk"
+    End If
+    ' Output
+    Range("B13").Value = Round(distressScore, 2)
+    Range("B14").Value = flag
+    Range("B16").Value = insights
+    MsgBox "Analysis complete. Results in B13, B14, B16."
+End Sub
+
+Function Nz(val) As Double
+    If IsNumeric(val) Then Nz = val Else Nz = 0
+End Function`,
   },
-  // Add more demo solutions as needed
 ];
 
 const languages = ["all", "python", "javascript", "typescript", "bash", "sql", "other"];
