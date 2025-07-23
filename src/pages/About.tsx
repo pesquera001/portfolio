@@ -11,7 +11,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            researcher. strategist-in-training. builder of frameworks that simulate the real world of private equity and defense innovation.
+            Researcher. Strategist-in-Training. Builder of Frameworks That Simulate the Real World of Private Equity and Defense Innovation.
           </motion.h1>
           <motion.p
             className="mb-8 text-lg text-metallic-silver font-mono"
@@ -27,16 +27,16 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">what drives me</h2>
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">What Drives Me</h2>
             <p className="mb-4 font-mono text-steel-gray">
               I operate under a simple idea: Act like a professional before you become one.<br />That means I:
             </p>
             <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
-              <li>Build mock investment theses using real-world data</li>
-              <li>Design diligence frameworks inspired by consulting playbooks</li>
-              <li>Create operational models that simulate PE-owned company growth</li>
-              <li>Read everything from KKR whitepapers to declassified DoD procurement memos</li>
-              <li>Use tools like Python, Notion, Airtable, and GPT-4 to bring ideas to life</li>
+              <li>Build Mock Investment Theses Using Real-World Data</li>
+              <li>Design Diligence Frameworks Inspired by Consulting Playbooks</li>
+              <li>Create Operational Models That Simulate PE-Owned Company Growth</li>
+              <li>Read Everything from KKR Whitepapers to Declassified DoD Procurement Memos</li>
+              <li>Use Tools Like Python, Notion, Airtable, and GPT-4 to Bring Ideas to Life</li>
             </ul>
             <p className="mt-4 font-mono text-steel-gray">
               My research is self-directed, but always tied to practical value creation — the kind of thinking used by operators and strategists in high-leverage environments.
@@ -48,11 +48,11 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">current projects (in progress)</h2>
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Current Projects (In Progress)</h2>
             <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
-              <li>Mock Fund I: A simulated investment strategy focused on dual-use aerospace and supply chain infrastructure.</li>
-              <li>Defense Tech Scoring Model: A framework to evaluate early-stage dual-use AI startups based on procurement viability and IP defensibility.</li>
-              <li>Value Creation Tracker: A Notion-based dashboard to simulate cost-reduction initiatives post-acquisition.</li>
+              <li>Mock Fund I: A Simulated Investment Strategy Focused on Dual-Use Aerospace and Supply Chain Infrastructure.</li>
+              <li>Defense Tech Scoring Model: A Framework to Evaluate Early-Stage Dual-Use AI Startups Based on Procurement Viability and IP Defensibility.</li>
+              <li>Value Creation Tracker: A Notion-Based Dashboard to Simulate Cost-Reduction Initiatives Post-Acquisition.</li>
             </ul>
           </motion.div>
           <motion.div
@@ -61,7 +61,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">where i’m headed</h2>
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Where I’m Headed</h2>
             <p className="mb-4 font-mono text-steel-gray">
               My goal is to work at the intersection of capital, operational design, and national strategy — whether that’s through private equity, consulting, or dual-use venture. I’m seeking internships, mentorships, or field-facing experiences that push me deeper into these environments.
             </p>
@@ -75,7 +75,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">let’s connect</h2>
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Let’s Connect</h2>
             <p className="mb-4 font-mono text-steel-gray">
               If you’re working in PE, strategy, or defense and have advice, opportunities, or even a reading list to share — I’d love to connect.
             </p>

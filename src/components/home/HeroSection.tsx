@@ -29,7 +29,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          aidan pesquera
+          Aidan Pesquera
         </motion.h1>
         <motion.h2
           className="text-2xl md:text-3xl font-normal text-metallic-silver mb-8 text-center font-sans"
@@ -37,7 +37,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          researcher in strategy, capital, and national security sectors
+          Researcher in Strategy, Capital, and National Security Sectors
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.3 }}
           className="max-w-2xl mx-auto text-lg md:text-xl text-metallic-silver mb-12 text-center font-mono"
         >
-          senior at ASU studying business administration & economics, with a growing portfolio in investment strategy, operational frameworks, and defense-tech research.
+          Senior at ASU studying Business Administration & Economics, with a growing portfolio in Investment Strategy, Operational Frameworks, and Defense-Tech Research.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
