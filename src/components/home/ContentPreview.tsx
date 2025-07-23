@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "../../utils";
-import { ArrowRight, Code, TrendingUp, Shield } from "lucide-react";
+import { ArrowRight, Code, TrendingUp, Shield, ChevronDown, ChevronRight } from "lucide-react";
 
 function PreviewCard({ area, index }: { area: any; index: number }) {
+  const [showInstructions, setShowInstructions] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -30,12 +32,30 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
             <h3 className="text-2xl font-normal text-steel-gray mb-2 font-sans uppercase tracking-tight">
               {area.title}
             </h3>
-            <p className="text-sm font-bold text-cobalt-blue mb-4 uppercase tracking-wider font-sans">
+            <p className="text-sm font-bold text-cobalt-blue mb-4 uppercase tracking-wider font-mono">
               {area.subtitle}
             </p>
-            <p className="text-steel-gray leading-relaxed mb-8 flex-grow font-sans">
+            <p className="text-steel-gray leading-relaxed mb-8 flex-grow font-mono">
               {area.description}
             </p>
+            {/* Instructions toggle */}
+            {area.instructions && (
+              <div className="mb-4">
+                <button
+                  type="button"
+                  className="flex items-center gap-2 text-cobalt-blue font-mono text-sm focus:outline-none"
+                  onClick={e => { e.preventDefault(); setShowInstructions(v => !v); }}
+                >
+                  {showInstructions ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                  Usage
+                </button>
+                {showInstructions && (
+                  <div className="mt-3 p-4 bg-light-steel-gray/20 border border-metallic-silver/20 font-mono text-steel-gray text-sm" style={{borderRadius: 0}}>
+                    {area.instructions}
+                  </div>
+                )}
+              </div>
+            )}
             <div className="flex items-center gap-2 text-cobalt-blue font-bold group-hover:gap-3 transition-all duration-300 font-sans">
               <span>Explore</span>
               <ArrowRight className="w-4 h-4" />
@@ -50,28 +70,31 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
 export default function ContentPreview() {
   const contentAreas = [
     {
+      title: "LBO Architecture Engine",
+      subtitle: "Excel VBA LBO Model Generator",
+      description: "An Excel VBA tool that generates leveraged buyout models with detailed debt schedules, tax calculations, and cash flow projections. Inputs are customizable via a form to produce five-year financial forecasts and equity IRR estimates.",
+      icon: Code,
+      path: createPageUrl("Solutions"),
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      instructions: "(Paste your instructions here or provide them in the next message.)"
+    },
+    {
       title: "Defense Tech Firm Analysis Framework",
       subtitle: "Custom diligence for dual-use AI startups",
       description: "Custom diligence framework for evaluating dual-use AI startups; built in Airtable + Python.",
       icon: TrendingUp,
       path: createPageUrl("Solutions"),
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop"
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+      instructions: null
     },
     {
       title: "Operational Value-Creation Model (Private Equity)",
       subtitle: "Simulated PE ops playbook",
       description: "Simulated PE firm playbook based on McKinsey ops efficiency KPIs + Bain cost optimization cases.",
-      icon: Code,
-      path: createPageUrl("Solutions"),
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
-    },
-    {
-      title: "Aerospace Supply Chain Turnaround (Mock Fund)",
-      subtitle: "Post-COVID consolidation strategy",
-      description: "Target profile strategy focused on post-COVID supply chain consolidation using open-source financials.",
       icon: Shield,
-      path: createPageUrl("Theses"),
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
+      path: createPageUrl("Solutions"),
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      instructions: null
     }
   ];
 
