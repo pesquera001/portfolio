@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Code } from "lucide-react";
 import CopyBlock from "../components/shared/CopyBlock";
-import { ChevronDown, ChevronRight } from "lucide-react";
 
 // Demo data for solutions
 const demoSolutions = [
