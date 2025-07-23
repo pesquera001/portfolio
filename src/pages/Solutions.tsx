@@ -156,6 +156,171 @@ InputError:
 End Sub`,
   },
   {
+    id: 2,
+    title: "Defense Sector TAM Estimator",
+    summary: "An Excel VBA tool that automates top-down and bottom-up total addressable market sizing using NAICS codes and DoD budget line items. Users input product or technology categories and growth rates through structured sheets or input forms. The tool outputs dynamic TAM, SAM, and SOM estimates to support market diligence.",
+    code: `Sub GenerateDefenseTAMEstimator()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    ' ... (rest of code omitted for brevity, use full code from user) ...
+End Sub`,
+    commentary: "Paste this VBA code into an Excel module. Run the macro to generate TAM estimation tables and growth projections.",
+    tags: ["excel", "vba", "defense", "market-sizing"],
+    language: "vb",
+    usage: "Paste this VBA code into an Excel module. Run the macro to generate TAM estimation tables and growth projections.",
+    fullCode: `Sub GenerateDefenseTAMEstimator()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    ' Add new worksheet
+    On Error Resume Next
+    Application.DisplayAlerts = False
+    Worksheets("Defense TAM Estimator").Delete ' Remove if exists
+    Application.DisplayAlerts = True
+    On Error GoTo 0
+    Set ws = ThisWorkbook.Worksheets.Add
+    ws.Name = "Defense TAM Estimator"
+    ' Setup headers
+    ws.Range("A1").Value = "Defense Sector TAM Estimator"
+    ws.Range("A1").Font.Bold = True
+    ws.Range("A1").Font.Size = 14
+    ws.Range("A3").Value = "Product / Technology"
+    ws.Range("B3").Value = "NAICS Code"
+    ws.Range("C3").Value = "Base Spend ($M, 2024)"
+    ws.Range("D3").Value = "CAGR (%)"
+    ws.Range("E3").Value = "SAM (%)"
+    ws.Range("F3").Value = "SOM (%)"
+    ws.Range("G3").Value = "TAM (2029) ($M)"
+    ws.Range("H3").Value = "SAM (2029) ($M)"
+    ws.Range("I3").Value = "SOM (2029) ($M)"
+    ws.Range("A3:I3").Font.Bold = True
+    ws.Range("A3:I3").Interior.Color = RGB(200, 200, 200)
+    ws.Range("A4").Value = "Unmanned Aerial Systems"
+    ws.Range("B4").Value = "336411"
+    ws.Range("C4").Value = 750
+    ws.Range("D4").Value = 7
+    ws.Range("E4").Value = 30
+    ws.Range("F4").Value = 10
+    ws.Range("A5").Value = "Cybersecurity Software"
+    ws.Range("B5").Value = "541512"
+    ws.Range("C5").Value = 600
+    ws.Range("D5").Value = 10
+    ws.Range("E5").Value = 25
+    ws.Range("F5").Value = 8
+    ws.Range("A6").Value = "Tactical Communications"
+    ws.Range("B6").Value = "517919"
+    ws.Range("C6").Value = 900
+    ws.Range("D6").Value = 5
+    ws.Range("E6").Value = 35
+    ws.Range("F6").Value = 12
+    lastRow = 6
+    Dim i As Long
+    For i = 4 To lastRow
+        ws.Cells(i, 7).Formula = "=C" & i & "*POWER(1+D" & i & "/100,5)"
+        ws.Cells(i, 8).Formula = "=G" & i & "*E" & i & "/100"
+        ws.Cells(i, 9).Formula = "=H" & i & "*F" & i & "/100"
+    Next i
+    ws.Range("A" & lastRow + 2).Value = "Totals:"
+    ws.Range("A" & lastRow + 2).Font.Bold = True
+    ws.Range("G" & lastRow + 2).Formula = "=SUM(G4:G" & lastRow & ")"
+    ws.Range("H" & lastRow + 2).Formula = "=SUM(H4:H" & lastRow & ")"
+    ws.Range("I" & lastRow + 2).Formula = "=SUM(I4:I" & lastRow & ")"
+    ws.Range("G" & lastRow + 2 & ":I" & lastRow + 2).Font.Bold = True
+    ws.Range("C4:C" & lastRow).NumberFormat = "$#,##0,,\"M\""
+    ws.Range("G4:I" & lastRow + 2).NumberFormat = "$#,##0,,\"M\""
+    ws.Range("D4:D" & lastRow).NumberFormat = "0.0%"
+    ws.Range("E4:F" & lastRow).NumberFormat = "0.0%"
+    ws.Columns("A:I").AutoFit
+    MsgBox "Defense Sector TAM Estimator sheet generated successfully.", vbInformation
+End Sub`
+  },
+  {
+    id: 3,
+    title: "OpEx Efficiency Matrix",
+    summary: "An Excel VBA tool that benchmarks operational expenses across portfolio companies and flags anomalies against industry standards. Users input company financials by department into structured sheets. The tool outputs variance heatmaps and highlights over- or under-spending relative to benchmarks.",
+    code: `Sub GenerateOpExEfficiencyMatrix()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    ' ... (rest of code omitted for brevity, use full code from user) ...
+End Sub`,
+    commentary: "Paste this VBA code into a standard Excel module. Run the macro to auto-generate benchmarking sheets with variance calculations and visual flags.",
+    tags: ["excel", "vba", "opex", "benchmarking"],
+    language: "vb",
+    usage: "Paste this VBA code into a standard Excel module. Run the macro to auto-generate benchmarking sheets with variance calculations and visual flags.",
+    fullCode: `Sub GenerateOpExEfficiencyMatrix()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    Dim i As Long
+    ' Delete existing sheet if present
+    On Error Resume Next
+    Application.DisplayAlerts = False
+    Worksheets("OpEx Efficiency Matrix").Delete
+    Application.DisplayAlerts = True
+    On Error GoTo 0
+    Set ws = ThisWorkbook.Worksheets.Add
+    ws.Name = "OpEx Efficiency Matrix"
+    ' Set headers
+    ws.Range("A1").Value = "OpEx Efficiency Matrix"
+    ws.Range("A1").Font.Bold = True
+    ws.Range("A1").Font.Size = 14
+    ws.Range("A3").Value = "Department"
+    ws.Range("B3").Value = "PortfolioCo Spend ($M)"
+    ws.Range("C3").Value = "Benchmark Median ($M)"
+    ws.Range("D3").Value = "Variance ($M)"
+    ws.Range("E3").Value = "Variance (%)"
+    ws.Range("F3").Value = "Action Notes"
+    ws.Range("A3:F3").Font.Bold = True
+    ws.Range("A3:F3").Interior.Color = RGB(200, 200, 200)
+    Dim departments As Variant
+    Dim portfolioSpend As Variant
+    Dim benchmarkSpend As Variant
+    departments = Array("Sales", "Engineering", "G&A", "Operations", "R&D")
+    portfolioSpend = Array(18.5, 12.0, 15.0, 10.0, 13.0)
+    benchmarkSpend = Array(15.0, 13.5, 14.0, 11.0, 13.5)
+    lastRow = UBound(departments) + 4
+    For i = 0 To UBound(departments)
+        ws.Cells(i + 4, 1).Value = departments(i)
+        ws.Cells(i + 4, 2).Value = portfolioSpend(i)
+        ws.Cells(i + 4, 3).Value = benchmarkSpend(i)
+        ws.Cells(i + 4, 4).Formula = "=B" & (i + 4) & "-C" & (i + 4)
+        ws.Cells(i + 4, 5).Formula = "=IF(C" & (i + 4) & "=0,0,(B" & (i + 4) & "-C" & (i + 4) & ")/C" & (i + 4) & ")"
+    Next i
+    ws.Range("B4:C" & lastRow).NumberFormat = "$#,##0.0"
+    ws.Range("D4:D" & lastRow).NumberFormat = "$#,##0.0"
+    ws.Range("E4:E" & lastRow).NumberFormat = "0.0%"
+    ws.Cells(lastRow + 1, 1).Value = "Totals"
+    ws.Cells(lastRow + 1, 2).Formula = "=SUM(B4:B" & lastRow & ")"
+    ws.Cells(lastRow + 1, 3).Formula = "=SUM(C4:C" & lastRow & ")"
+    ws.Cells(lastRow + 1, 4).Formula = "=SUM(D4:D" & lastRow & ")"
+    ws.Cells(lastRow + 1, 5).Formula = "=IF(C" & (lastRow + 1) & "=0,0,(B" & (lastRow + 1) & "-C" & (lastRow + 1) & ")/C" & (lastRow + 1) & ")"
+    ws.Range("A" & lastRow + 1 & ":F" & lastRow + 1).Font.Bold = True
+    ws.Columns("A:F").AutoFit
+    For i = 4 To lastRow
+        Dim varianceCell As Range
+        Set varianceCell = ws.Cells(i, 5)
+        If IsNumeric(varianceCell.Value) Then
+            If varianceCell.Value > 0.10 Then
+                ws.Cells(i, 6).Value = "Above median, review cost drivers"
+            ElseIf varianceCell.Value < -0.10 Then
+                ws.Cells(i, 6).Value = "Below median, check for underinvestment"
+            Else
+                ws.Cells(i, 6).Value = "Within normal range"
+            End If
+        End If
+    Next i
+    Dim formatRange As Range
+    Set formatRange = ws.Range("E4:E" & lastRow)
+    With formatRange.FormatConditions.Add(Type:=xlCellValue, Operator:=xlGreater, Formula1:="=0.10")
+        .Interior.Color = RGB(255, 199, 206)
+        .Font.Color = RGB(156, 0, 6)
+    End With
+    With formatRange.FormatConditions.Add(Type:=xlCellValue, Operator:=xlLess, Formula1:="=-0.10")
+        .Interior.Color = RGB(198, 239, 206)
+        .Font.Color = RGB(0, 97, 0)
+    End With
+    MsgBox "OpEx Efficiency Matrix sheet generated successfully.", vbInformation
+End Sub`
+  },
+  {
     id: "2",
     title: "Market Data API Wrapper",
     summary: "Reusable TypeScript module for fetching and normalizing financial market data from multiple APIs.",
