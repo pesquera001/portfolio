@@ -182,9 +182,14 @@ function UsageToggle({ usage, code, language }: { usage: string; code: string; l
         {open ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />} Usage
       </button>
       {open && (
-        <div className="mt-3 p-4 bg-light-steel-gray/20 border border-metallic-silver/20 font-mono text-steel-gray text-sm" style={{borderRadius: 0}}>
-          <div className="mb-4">{usage}</div>
-          <CopyBlock language={language} content={code} />
+        <div className="mt-3 p-0 bg-light-steel-gray/20 border border-metallic-silver/20 font-mono text-steel-gray text-sm" style={{borderRadius: 0}}>
+          <div
+            className="overflow-y-auto overflow-x-hidden"
+            style={{ maxHeight: 'calc(1.5em * 7 + 2rem)', minHeight: 'calc(1.5em * 7)', background: 'inherit', borderRadius: 0 }}
+          >
+            <CopyBlock language={language} content={code} />
+          </div>
+          <div className="p-4 pt-2" style={{borderRadius: 0}}>{usage}</div>
         </div>
       )}
     </div>
