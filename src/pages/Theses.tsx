@@ -11,7 +11,7 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-4xl md:text-5xl font-normal font-sans mb-4 tracking-tight" style={{fontFamily: 'Inter, sans-serif'}}>Projects</h1>
+          <h1 className="text-4xl md:text-5xl font-normal font-sans mb-4 tracking-tight" style={{fontFamily: 'Inter, sans-serif'}}>Modeling Tools</h1>
           <p className="text-lg text-metallic-silver max-w-2xl mx-auto font-mono mb-2">Bridging insights across private capital and national security strategy.</p>
         </motion.div>
 
