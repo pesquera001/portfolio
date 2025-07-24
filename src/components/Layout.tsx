@@ -6,7 +6,7 @@ const navigationItems = [
   { name: "About", path: "/about" },
   { name: "Modeling Tools", path: "/solutions" },
   { name: "Blog", path: "/editorial" },
-  { name: "Investment Theses", path: "/theses" },
+  { name: "Projects", path: "/projects" },
 ];
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

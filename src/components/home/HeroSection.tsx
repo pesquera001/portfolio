@@ -45,9 +45,9 @@ export default function HeroSection() {
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>
-          <Link to={createPageUrl("Theses")}> {/* Investment Theses */}
+          <Link to={createPageUrl("Projects")}> {/* Projects */}
             <Button className="border border-metallic-silver text-metallic-silver hover:bg-bright-blue hover:text-steel-gray font-normal px-10 py-4">
-              Read My Investment Theses
+              View My Projects
             </Button>
           </Link>
         </motion.div>
