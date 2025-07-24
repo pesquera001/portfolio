@@ -22,7 +22,7 @@ export default function About() {
             Researcher at the Intersection of Private Markets and Defense.
           </motion.h2>
           <motion.p
-            className="mb-8 text-lg text-metallic-silver font-mono"
+            className="mb-8 text-lg text-white font-mono"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -36,18 +36,8 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">What Drives Me</h2>
-            <p className="mb-4 font-mono text-steel-gray">
-              I operate under a simple idea: Act like a professional before you become one.<br />That means I:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
-              <li>Build Mock Investment Theses Using Real-World Data</li>
-              <li>Design Diligence Frameworks Inspired by Consulting Playbooks</li>
-              <li>Create Operational Models That Simulate PE-Owned Company Growth</li>
-              <li>Read Everything from KKR Whitepapers to Declassified DoD Procurement Memos</li>
-              <li>Use Tools Like Python, Notion, Airtable, and GPT-4 to Bring Ideas to Life</li>
-            </ul>
-            <p className="mt-4 font-mono text-steel-gray">
-              My research is self-directed, but always tied to practical value creation — the kind of thinking used by operators and strategists in high-leverage environments.
+            <p className="mb-4 font-mono text-white">
+              I’m driven by a deep interest in operational value creation, particularly within the context of acquired companies. My work centers on understanding how businesses can be systematically optimized—through cost efficiencies, organizational redesign, and enhanced information architecture—to unlock scalable, sustainable performance. My passion lies in research, optimization, and execution—designing systems, models, and frameworks that help capital allocators and operators make smarter, faster decisions in high-stakes environments. I focus on identifying companies with potential for scale and operational enhancement, analyzing how they can be improved post-acquisition through better systems, strategy, and structure.
             </p>
           </motion.div>
           <motion.div
@@ -56,11 +46,10 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Current Projects (In Progress)</h2>
-            <ul className="list-disc pl-6 space-y-2 font-mono text-steel-gray">
-              <li>Mock Fund I: A Simulated Investment Strategy Focused on Dual-Use Aerospace and Supply Chain Infrastructure.</li>
-              <li>Defense Tech Scoring Model: A Framework to Evaluate Early-Stage Dual-Use AI Startups Based on Procurement Viability and IP Defensibility.</li>
-              <li>Value Creation Tracker: A Notion-Based Dashboard to Simulate Cost-Reduction Initiatives Post-Acquisition.</li>
+            <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Current Projects</h2>
+            <ul className="list-disc pl-6 space-y-2 font-mono text-white">
+              <li><span className="font-bold">Private Company Intelligence System:</span> Developing a software platform that streamlines tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. Focused on real-time data sourcing and strategic filtering for industry relevance and growth velocity.</li>
+              <li><span className="font-bold">Dual-Use Defense Applications Study:</span> Researching technologies with both commercial and defense utility, particularly those that can be adapted for surge capacity during wartime or national emergencies. The goal is to map transition pathways from early-stage commercial use to scalable defense readiness.</li>
             </ul>
           </motion.div>
           <motion.div
@@ -70,11 +59,14 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Where I’m Headed</h2>
-            <p className="mb-4 font-mono text-steel-gray">
-              My goal is to work at the intersection of capital, operational design, and national strategy — whether that’s through private equity, consulting, or dual-use venture. I’m seeking internships, mentorships, or field-facing experiences that push me deeper into these environments.
+            <p className="mb-4 font-mono text-white">
+              I’m seeking internships in private equity, management consulting, or defense advisory—roles that sit at the crossroads of strategy, capital, and execution.
             </p>
-            <p className="font-mono text-steel-gray">
-              I’m not chasing a title — I’m chasing insight, responsibility, and long-term leverage.
+            <p className="mb-4 font-mono text-white">
+              My goal is to deepen my exposure to high-leverage environments where complex decisions are made under constraints—whether that’s evaluating acquisition targets, driving operational turnarounds, or shaping defense-industrial strategy.
+            </p>
+            <p className="font-mono text-white">
+              Ultimately, I’m working toward a career that blends analytical rigor, strategic insight, and operational impact—in service of both private markets and national interests.
             </p>
           </motion.div>
           <motion.div
