@@ -76,13 +76,12 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">Let’s Connect</h2>
-            <p className="mb-4 font-mono text-steel-gray">
+            <p className="mb-4 font-mono text-white">
               If you’re working in PE, strategy, or defense and have advice, opportunities, or even a reading list to share — I’d love to connect.
             </p>
             <div className="flex flex-col gap-2 font-mono">
-              <a href="mailto:aidan@yourdomain.com" className="underline text-cobalt-blue">aidan@yourdomain.com</a>
-              <a href="https://linkedin.com/in/aidanpesquera" className="underline text-cobalt-blue">LinkedIn</a>
-              <a href="/resume.pdf" className="underline text-cobalt-blue">View Resume</a>
+              <a href="mailto:aidan.pesquera@gmail.com" className="underline text-bright-blue">aidan.pesquera@gmail.com</a>
+              <a href="https://www.linkedin.com/in/apesquera" className="underline text-bright-blue">LinkedIn</a>
             </div>
           </motion.div>
         </div>
