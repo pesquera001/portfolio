@@ -255,7 +255,7 @@ End Sub`} />
             Strategic Research & Tools
           </h2>
           <p className="text-2xl text-metallic-silver max-w-2xl mx-auto leading-relaxed font-sans font-medium">
-            Specialized expertise in finance, technology, and defense sectors with quantitative analysis capabilities.
+            Specialized research in finance, technology, and defense sectors.
           </p>
         </motion.div>
         {/* Content Grid */}
