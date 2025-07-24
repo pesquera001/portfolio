@@ -224,7 +224,7 @@ End Sub`} />
       subtitle: "Private company sourcing & signal detection",
       description: "Developing a software platform that streamlines tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. Focused on real-time data sourcing and strategic filtering for industry relevance and growth velocity.",
       icon: TrendingUp,
-      path: createPageUrl("Solutions"),
+      path: createPageUrl("Projects"),
       image: "/Photo 2.png",
       instructions: null
     },
@@ -233,7 +233,7 @@ End Sub`} />
       subtitle: "Mapping commercial & defense tech transitions",
       description: "Researching technologies with both commercial and defense utility, particularly those that can be adapted for surge capacity during wartime or national emergencies. The goal is to map transition pathways from early-stage commercial use to scalable defense readiness.",
       icon: Shield,
-      path: createPageUrl("Solutions"),
+      path: createPageUrl("Projects"),
       image: "/Photo 3.png",
       instructions: null
     }
