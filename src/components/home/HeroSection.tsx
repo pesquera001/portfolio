@@ -39,14 +39,6 @@ export default function HeroSection() {
         >
           Researcher at the Intersection of Private Markets and Defense.
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-metallic-silver mb-12 text-center font-mono"
-        >
-          Senior at Arizona State University, studying Business Administration and Economics. Focused on strategic planning, defense innovation, and business advisory—building a portfolio that bridges analytical rigor with real-world insight across private capital and national security domains.
-        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

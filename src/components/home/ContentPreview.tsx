@@ -252,7 +252,7 @@ End Sub`} />
           className="text-center mb-20"
         >
           <div className="w-24 h-1 bg-cobalt-blue mx-auto mb-10"></div>
-          <h2 className="text-5xl md:text-6xl font-normal text-steel-gray mb-8 tracking-tight font-sans uppercase">
+          <h2 className="text-5xl md:text-6xl font-normal text-steel-gray mb-8 tracking-tight font-sans">
             Strategic Research & Tools
           </h2>
           <p className="text-2xl text-metallic-silver max-w-2xl mx-auto leading-relaxed font-sans font-medium">
