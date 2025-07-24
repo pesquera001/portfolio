@@ -23,13 +23,13 @@ export default function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#232a32] border border-metallic-silver/20 p-8 flex flex-col justify-between"
-            style={{borderRadius:0}}
+            className="bg-white border border-metallic-silver/20 p-8 flex flex-col justify-between shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl group" style={{borderRadius:0}}
           >
             <div>
-              <h2 className="text-2xl font-normal mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif'}}>Private Market Intelligence</h2>
-              <p className="text-bright-blue font-mono mb-2">A software platform for sourcing and evaluating acquisition targets.</p>
-              <p className="text-white font-mono mb-8">Developing a software platform that streamlines the tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. The tool focuses on real-time data sourcing and strategic filtering for industry relevance, operational patterns, and growth velocity.</p>
+              <h2 className="text-2xl font-normal mb-3 font-sans text-black" style={{fontFamily: 'Inter, sans-serif'}}>Private Market Intelligence</h2>
+              <p className="text-bright-blue font-sans mb-2">A software platform for sourcing and evaluating acquisition targets.</p>
+              <p className="text-black font-sans mb-8">Developing a software platform that streamlines the tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. The tool focuses on real-time data sourcing and strategic filtering for industry relevance, operational patterns, and growth velocity.</p>
+              <div className="mt-8"></div>
               <img src="/Photo 2.png" alt="Private Market Intelligence" className="w-full h-64 object-cover mb-6" style={{borderRadius:0}} />
             </div>
             {/* Visual removed as requested */}
@@ -41,13 +41,12 @@ export default function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#232a32] border border-metallic-silver/20 p-8 flex flex-col justify-between"
-            style={{borderRadius:0}}
+            className="bg-white border border-metallic-silver/20 p-8 flex flex-col justify-between shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl group" style={{borderRadius:0}}
           >
             <div>
-              <h2 className="text-2xl font-normal mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif'}}>Dual-Use Defense Applications Study</h2>
-              <p className="text-bright-blue font-mono mb-2">A research initiative mapping the commercialization and defense adaptation of emerging technologies.</p>
-              <p className="text-white font-mono mb-8">Researching technologies with both commercial and defense utility, especially those that can be converted into surge production assets during wartime or national emergencies. The study aims to map transition pathways from early-stage commercial use to scalable defense readiness and procurement viability.</p>
+              <h2 className="text-2xl font-normal mb-3 font-sans text-black" style={{fontFamily: 'Inter, sans-serif'}}>Dual-Use Defense Applications Study</h2>
+              <p className="text-bright-blue font-sans mb-2">A research initiative mapping the commercialization and defense adaptation of emerging technologies.</p>
+              <p className="text-black font-sans mb-8">Researching technologies with both commercial and defense utility, especially those that can be converted into surge production assets during wartime or national emergencies. The study aims to map transition pathways from early-stage commercial use to scalable defense readiness and procurement viability.</p>
               <img src="/Photo 3.png" alt="Dual-Use Defense Applications Study" className="w-full h-64 object-cover mb-6" style={{borderRadius:0}} />
             </div>
             {/* Visual removed as requested */}
