@@ -15,12 +15,6 @@ export default function HeroSection() {
           transition={{ duration: 2 }}
           className="absolute inset-0 bg-gradient-to-br from-black via-deep-navy-blue to-black opacity-80"
         />
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.15, y: 0 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute left-1/4 top-1/3 w-1/2 h-1/3 bg-cobalt-blue blur-3xl opacity-60"
-        />
       </div>
       <div className="relative z-10 w-full max-w-5xl px-8 grid grid-cols-1 place-items-center" style={{paddingTop: '8vh', paddingBottom: '8vh'}}>
         <motion.h1
