@@ -18,11 +18,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo/Monogram */}
-            <Link to="/" className="flex items-center">
-              <span className="text-xl font-semibold tracking-tight text-bright-blue">
-                Aidan Pesquera
-              </span>
-            </Link>
+            {/* Removed Aidan Pesquera from nav */}
             <div className="hidden md:flex items-center space-x-10">
               {navigationItems.map((item) => (
                 <Link
@@ -38,9 +34,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <div className="hidden md:flex items-center">
-              <button className="bg-cobalt-blue hover:bg-bright-blue text-steel-gray font-medium text-sm px-6 py-2 transition-colors">Contact</button>
-            </div>
+            {/* Removed contact button from nav */}
             {/* Mobile menu button (not implemented yet) */}
             <div className="md:hidden">
               <button className="text-metallic-silver hover:text-bright-blue">

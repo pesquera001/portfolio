@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#232a32] font-sans">
+    <div className="min-h-screen bg-white font-sans">
       <section className="py-24">
         <div className="max-w-3xl mx-auto px-8 bg-white font-sans" style={{borderRadius:0}}>
           <motion.h1
