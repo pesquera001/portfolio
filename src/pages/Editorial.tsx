@@ -116,7 +116,7 @@ const Editorial: React.FC = () => (
             <h2 className="text-2xl md:text-3xl font-normal font-sans text-white mb-3 transition-colors duration-200 group-hover:text-bright-blue">
               {post.title}
             </h2>
-            <p className="font-mono text-lg text-metallic-silver mb-2 transition-colors duration-200 group-hover:text-bright-blue">
+            <p className="font-mono text-lg text-metallic-silver mb-2 transition-colors duration-200">
               {post.subtitle}
             </p>
             {idx < blogPosts.length - 1 && (

@@ -1094,7 +1094,7 @@ const Solutions: React.FC = () => {
         >
           <div className="w-20 h-1 bg-cobalt-blue mx-auto mb-8"></div>
           <h1 className="text-5xl md:text-6xl font-normal text-white mb-6 tracking-tight font-sans">
-            Projects
+            Modeling
           </h1>
           <p className="text-lg text-metallic-silver max-w-2xl mx-auto leading-relaxed">
             Clean, efficient code solutions with detailed breakdowns and reusable components.
