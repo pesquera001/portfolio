@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "../../utils";
 import { ArrowRight, Code, TrendingUp, Shield, ChevronDown, ChevronRight } from "lucide-react";
-import CopyBlock from "../shared/CopyBlock";
 
 function PreviewCard({ area, index }: { area: any; index: number }) {
   const [showInstructions, setShowInstructions] = useState(false);
