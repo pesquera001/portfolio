@@ -1,8 +1,4 @@
 import { motion } from "framer-motion";
-import Button from "../ui/Button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { createPageUrl } from "../../utils";
 
 export default function HeroSection() {
   return (
