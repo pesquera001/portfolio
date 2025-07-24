@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Code } from "lucide-react";
+import { Code } from "lucide-react";
 import CopyBlock from "../components/shared/CopyBlock";
 
 // Demo data for solutions
@@ -1054,31 +1054,17 @@ End Function`,
   },
 ];
 
-const languages = ["all", "python", "javascript", "typescript", "bash", "sql", "other"];
-
 const Solutions: React.FC = () => {
   const [solutions] = useState(demoSolutions);
   const [filteredSolutions, setFilteredSolutions] = useState(demoSolutions);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState("all");
 
   useEffect(() => {
     filterSolutions();
     // eslint-disable-next-line
-  }, [solutions, searchTerm, selectedLanguage]);
+  }, [solutions]);
 
   const filterSolutions = () => {
     let filtered = solutions;
-    if (searchTerm) {
-      filtered = filtered.filter(solution =>
-        solution.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        solution.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        solution.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
-    }
-    if (selectedLanguage !== "all") {
-      filtered = filtered.filter(solution => solution.language === selectedLanguage);
-    }
     setFilteredSolutions(filtered);
   };
 
