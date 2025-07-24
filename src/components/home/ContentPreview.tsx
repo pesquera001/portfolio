@@ -23,7 +23,6 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
               src={area.image} 
               alt={area.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{borderRadius: 0}} />
-            <div className="absolute inset-0 bg-[#232a32] group-hover:bg-light-steel-gray/50 transition-colors duration-300" style={{borderRadius: 0}}></div>
             <div className="absolute top-4 left-4">
               <area.icon className="w-8 h-8 text-white" />
             </div>
