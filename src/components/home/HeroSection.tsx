@@ -33,24 +33,7 @@ export default function HeroSection() {
         >
           Researcher at the Intersection of Private Markets and Defense.
         </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-        >
-          <Link to={createPageUrl("Solutions")}> {/* Research & Projects */}
-            <Button className="bg-cobalt-blue hover:bg-bright-blue text-steel-gray font-normal px-10 py-4 flex items-center gap-2 border-0 shadow-none">
-              Explore Research & Projects
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </Link>
-          <Link to={createPageUrl("Projects")}> {/* Projects */}
-            <Button className="border border-metallic-silver text-metallic-silver hover:bg-bright-blue hover:text-steel-gray font-normal px-10 py-4">
-              View My Projects
-            </Button>
-          </Link>
-        </motion.div>
+        {/* Buttons removed as requested */}
       </div>
     </section>
   );

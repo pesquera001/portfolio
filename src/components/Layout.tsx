@@ -67,7 +67,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div>
               <h4 className="font-normal mb-4 text-white font-sans">Contact</h4>
               <div className="space-y-2 font-mono">
-                <a href="mailto:aidan.pesquera@email.com" className="block text-sm text-metallic-silver hover:text-bright-blue transition-colors">aidan.pesquera@email.com</a>
+                <a href="mailto:aidan.pesquera@gmail.com" className="block text-sm text-metallic-silver hover:text-bright-blue transition-colors">aidan.pesquera@gmail.com</a>
                 <a href="https://linkedin.com/in/aidanpesquera" className="block text-sm text-metallic-silver hover:text-bright-blue transition-colors">LinkedIn</a>
               </div>
             </div>

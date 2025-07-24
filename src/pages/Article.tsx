@@ -120,7 +120,6 @@ const Article: React.FC = () => {
       <div className="max-w-3xl mx-auto">
         <Link to="/editorial" className="text-cobalt-blue underline font-mono mb-8 inline-block">← Back to Blog</Link>
         <h1 className="text-4xl md:text-5xl font-normal font-sans text-white mb-4">{post.title}</h1>
-        <p className="font-mono text-lg text-metallic-silver mb-8">{post.subtitle}</p>
         <div className="prose prose-invert prose-lg max-w-none font-mono text-white">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
