@@ -5,30 +5,37 @@ export default function About() {
     <div className="min-h-screen bg-white font-sans">
       <section className="py-24">
         <div className="max-w-3xl mx-auto px-8 bg-white font-sans" style={{borderRadius:0}}>
-          <motion.h1
-            className="text-4xl md:text-5xl font-normal text-black mb-8 font-sans"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Aidan Pesquera
-          </motion.h1>
-          <motion.h2
-            className="text-2xl md:text-3xl font-normal text-cobalt-blue mb-6 font-sans"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            Researcher at the Intersection of Private Markets and Defense.
-          </motion.h2>
-          <motion.p
-            className="mb-8 text-lg text-black font-sans"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Senior at Arizona State University, studying Business Administration and Economics. Focused on strategic planning, defense innovation, and business advisory—building a portfolio that bridges analytical rigor with real-world insight across private capital and national security domains.
-          </motion.p>
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+              <motion.h1
+                className="text-4xl md:text-5xl font-normal text-black mb-8 font-sans"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Aidan Pesquera
+              </motion.h1>
+              <motion.h2
+                className="text-2xl md:text-3xl font-normal text-cobalt-blue mb-6 font-sans"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                Researcher at the Intersection of Private Markets and Defense.
+              </motion.h2>
+              <motion.p
+                className="mb-8 text-lg text-black font-sans"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Senior at Arizona State University, studying Business Administration and Economics. Focused on strategic planning, defense innovation, and business advisory—building a portfolio that bridges analytical rigor with real-world insight across private capital and national security domains.
+              </motion.p>
+            </div>
+            <div className="flex justify-center md:justify-end items-center">
+              <img src="/Photo 1.png" alt="Aidan Pesquera Headshot" className="w-full max-w-xs h-auto object-cover" style={{borderRadius:0}} />
+            </div>
+          </div>
           <motion.div
             className="mb-12"
             initial={{ opacity: 0, y: 20 }}
