@@ -1101,39 +1101,6 @@ const Solutions: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white p-6 mb-12 border border-metallic-silver/20"
-        >
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-light-steel-gray w-5 h-5" />
-                <input
-                  placeholder="Search solutions or technologies..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-white border border-metallic-silver/20 focus:border-cobalt-blue text-steel-gray placeholder-light-steel-gray rounded-lg w-full py-2"
-                />
-              </div>
-            </div>
-            <select
-              value={selectedLanguage}
-              onChange={e => setSelectedLanguage(e.target.value)}
-              className="w-full md:w-48 bg-white border border-metallic-silver/20 text-steel-gray rounded-lg py-2"
-            >
-              {languages.map(language => (
-                <option key={language} value={language}>
-                  {language === "all" ? "All Languages" : language.charAt(0).toUpperCase() + language.slice(1)}
-                </option>
-              ))}
-            </select>
-          </div>
-        </motion.div>
-
         {/* Solutions List */}
         <AnimatePresence mode="wait">
           {filteredSolutions.length === 0 ? (
