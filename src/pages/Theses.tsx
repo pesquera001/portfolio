@@ -27,9 +27,10 @@ export default function ProjectsPage() {
             style={{borderRadius:0}}
           >
             <div>
-              <h2 className="text-2xl font-normal mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif'}}>Private Company Intelligence Tool</h2>
+              <h2 className="text-2xl font-normal mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif'}}>Private Market Intelligence</h2>
               <p className="text-bright-blue font-mono mb-2">A software platform for sourcing and evaluating acquisition targets.</p>
               <p className="text-white font-mono mb-8">Developing a software platform that streamlines the tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. The tool focuses on real-time data sourcing and strategic filtering for industry relevance, operational patterns, and growth velocity.</p>
+              <img src="/Photo 2.png" alt="Private Market Intelligence" className="w-full h-56 object-cover mb-6" style={{borderRadius:0}} />
             </div>
             {/* Visual suggestion placeholder */}
             <div className="flex-1 flex items-end justify-center">
@@ -52,6 +53,7 @@ export default function ProjectsPage() {
               <h2 className="text-2xl font-normal mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif'}}>Dual-Use Defense Applications Study</h2>
               <p className="text-bright-blue font-mono mb-2">A research initiative mapping the commercialization and defense adaptation of emerging technologies.</p>
               <p className="text-white font-mono mb-8">Researching technologies with both commercial and defense utility, especially those that can be converted into surge production assets during wartime or national emergencies. The study aims to map transition pathways from early-stage commercial use to scalable defense readiness and procurement viability.</p>
+              <img src="/Photo 3.png" alt="Dual-Use Defense Applications Study" className="w-full h-56 object-cover mb-6" style={{borderRadius:0}} />
             </div>
             {/* Visual suggestion placeholder */}
             <div className="flex-1 flex items-end justify-center">

@@ -76,7 +76,7 @@ export default function ContentPreview() {
       description: "An Excel VBA tool that generates leveraged buyout models with detailed debt schedules, tax calculations, and cash flow projections. Inputs are customizable via a form to produce five-year financial forecasts and equity IRR estimates.",
       icon: Code,
       path: createPageUrl("Solutions"),
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      image: "/Photo 1.png",
       instructions: (
         <div>
           <div className="mb-4">Paste this VBA code into an Excel UserForm module. Fill out the form fields and click 'Run Model' to generate a 5-year LBO forecast and IRR.</div>
@@ -226,7 +226,7 @@ End Sub`} />
       description: "Developing a software platform that streamlines tracking, sourcing, and profiling of private companies—enabling faster signal detection for acquisition potential. Focused on real-time data sourcing and strategic filtering for industry relevance and growth velocity.",
       icon: TrendingUp,
       path: createPageUrl("Solutions"),
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+      image: "/Photo 2.png",
       instructions: null
     },
     {
@@ -235,7 +235,7 @@ End Sub`} />
       description: "Researching technologies with both commercial and defense utility, particularly those that can be adapted for surge capacity during wartime or national emergencies. The goal is to map transition pathways from early-stage commercial use to scalable defense readiness.",
       icon: Shield,
       path: createPageUrl("Solutions"),
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      image: "/Photo 3.png",
       instructions: null
     }
   ];
