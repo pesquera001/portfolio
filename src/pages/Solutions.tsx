@@ -1194,7 +1194,7 @@ const Solutions: React.FC = () => {
                       >
                         <CopyBlock content={solution.fullCode} language={solution.language} />
                       </div>
-                      <div className="p-4 pt-2" style={{borderRadius: 0}}>{solution.usage}</div>
+                      <div className="p-4 pt-2 mb-0" style={{borderRadius: 0}}>{solution.usage}</div>
                     </div>
                   ) : (
                     <div>
