@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const navigationItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Technical Solutions", path: "/solutions" },
+  { name: "Modeling Tools", path: "/solutions" },
   { name: "Blog", path: "/editorial" },
   { name: "Investment Theses", path: "/theses" },
 ];
@@ -13,7 +13,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
   return (
     <div className="min-h-screen bg-steel-gray text-white font-sans">
-      <div className="bg-red-500 text-white text-center py-2">Layout is rendering</div>
       {/* Navigation */}
       <nav className="fixed z-50 top-0 left-0 right-0 bg-steel-gray/95 backdrop-blur-lg border-b border-metallic-silver/20">
         <div className="max-w-7xl mx-auto px-8">
