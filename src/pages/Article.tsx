@@ -116,11 +116,11 @@ const Article: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#232a32] font-sans text-white py-24 px-4 md:px-0">
+    <div className="min-h-screen bg-white font-sans text-black py-24 px-4 md:px-0">
       <div className="max-w-3xl mx-auto">
         <Link to="/editorial" className="text-cobalt-blue underline font-mono mb-8 inline-block">← Back to Blog</Link>
-        <h1 className="text-4xl md:text-5xl font-normal font-sans text-white mb-4">{post.title}</h1>
-        <div className="prose prose-invert prose-lg max-w-none font-mono text-white">
+        <h1 className="text-4xl md:text-5xl font-normal font-sans text-black mb-4">{post.title}</h1>
+        <div className="prose prose-lg max-w-none font-mono text-black">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
       </div>
