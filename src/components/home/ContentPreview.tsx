@@ -15,7 +15,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
       viewport={{ once: true, amount: 0.3 }}
       className="group"
     >
-      <Link to={area.path} className="block bg-white h-full border border-metallic-silver/20 hover:border-mint-green transition-all duration-300 hover:shadow-lg">
+      <Link to={area.path} className="block bg-white h-full border border-metallic-silver/20 hover:border-bright-blue transition-all duration-300 hover:shadow-lg">
         <div className="relative h-full flex flex-col overflow-hidden">
           {/* Image with overlay */}
           <div className="aspect-[16/10] relative overflow-hidden">
@@ -33,7 +33,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
             <h3 className="text-2xl font-normal text-steel-gray mb-2 font-sans uppercase tracking-tight">
               {area.title}
             </h3>
-            <p className="text-sm font-bold text-mint-green mb-4 uppercase tracking-wider font-mono">
+            <p className="text-sm font-bold text-bright-blue mb-4 uppercase tracking-wider font-mono">
               {area.subtitle}
             </p>
             <p className="text-steel-gray leading-relaxed mb-8 flex-grow font-mono">
@@ -44,7 +44,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
               <div className="mb-4">
                 <button
                   type="button"
-                  className="flex items-center gap-2 text-mint-green font-mono text-sm focus:outline-none"
+                  className="flex items-center gap-2 text-bright-blue font-mono text-sm focus:outline-none"
                   onClick={e => { e.preventDefault(); setShowInstructions(v => !v); }}
                 >
                   {showInstructions ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
@@ -57,7 +57,7 @@ function PreviewCard({ area, index }: { area: any; index: number }) {
                 )}
               </div>
             )}
-            <div className="flex items-center gap-2 text-mint-green font-bold group-hover:gap-3 transition-all duration-300 font-sans">
+            <div className="flex items-center gap-2 text-bright-blue font-bold group-hover:gap-3 transition-all duration-300 font-sans">
               <span>Explore</span>
               <ArrowRight className="w-4 h-4" />
             </div>
@@ -251,7 +251,7 @@ End Sub`} />
           viewport={{ once: true, amount: 0.5 }}
           className="text-center mb-20"
         >
-          <div className="w-24 h-1 bg-mint-green mx-auto mb-10"></div>
+          <div className="w-24 h-1 bg-bright-blue mx-auto mb-10"></div>
           <h2 className="text-5xl md:text-6xl font-normal text-steel-gray mb-8 tracking-tight font-sans">
             Strategic Research & Tools
           </h2>
