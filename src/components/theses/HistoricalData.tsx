@@ -25,7 +25,7 @@ export default function HistoricalData({ fundName }: { fundName: string }) {
               className={`whitespace-nowrap pb-3 px-1 border-b-2 font-medium text-sm transition-colors duration-300 ${
                 activeTab === tab.name
                   ? 'border-cobalt-blue text-cobalt-blue'
-                  : 'border-transparent text-steel-gray hover:text-white'
+                  : 'border-transparent text-steel-gray hover:text-mint-green'
               }`}
             >
               {tab.name}

@@ -46,13 +46,13 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <Link to={createPageUrl("Solutions")}> {/* Research & Projects */}
-            <Button className="bg-cobalt-blue hover:bg-cobalt-blue-alt text-white font-normal px-10 py-4 flex items-center gap-2 border-0 shadow-none">
+            <Button className="bg-cobalt-blue hover:bg-mint-green text-steel-gray font-normal px-10 py-4 flex items-center gap-2 border-0 shadow-none">
               Explore Research & Projects
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>
           <Link to={createPageUrl("Theses")}> {/* Investment Theses */}
-            <Button className="border border-metallic-silver text-metallic-silver hover:bg-white hover:text-steel-gray font-normal px-10 py-4">
+            <Button className="border border-metallic-silver text-metallic-silver hover:bg-mint-green hover:text-steel-gray font-normal px-10 py-4">
               Read My Investment Theses
             </Button>
           </Link>

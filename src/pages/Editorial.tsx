@@ -113,10 +113,10 @@ const Editorial: React.FC = () => (
             className="group block border-b border-metallic-silver/20 pb-10 hover:bg-[#232a32]/80 transition-colors"
             style={{borderRadius:0}}
           >
-            <h2 className="text-2xl md:text-3xl font-normal font-sans text-white mb-3 transition-colors duration-200 group-hover:text-cobalt-blue">
+            <h2 className="text-2xl md:text-3xl font-normal font-sans text-white mb-3 transition-colors duration-200 group-hover:text-mint-green">
               {post.title}
             </h2>
-            <p className="font-mono text-lg text-metallic-silver mb-2 transition-colors duration-200 group-hover:text-white">
+            <p className="font-mono text-lg text-metallic-silver mb-2 transition-colors duration-200 group-hover:text-mint-green">
               {post.subtitle}
             </p>
             {idx < blogPosts.length - 1 && (

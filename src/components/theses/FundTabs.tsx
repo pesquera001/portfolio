@@ -53,8 +53,8 @@ export default function FundTabs() {
               onClick={() => setActiveTab(fund.name)}
               className={`whitespace-nowrap py-4 px-1 border-b-2 font-semibold text-base transition-colors duration-300 ${
                 activeTab === fund.name
-                  ? 'border-cobalt-blue text-cobalt-blue'
-                  : 'border-transparent text-steel-gray hover:text-white hover:border-steel-gray'
+                  ? 'border-mint-green text-mint-green'
+                  : 'border-transparent text-steel-gray hover:text-mint-green hover:border-mint-green'
               }`}
             >
               {fund.name}

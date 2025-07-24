@@ -35,7 +35,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   className={`text-sm font-medium transition-colors duration-300 relative ${
                     location.pathname === item.path
                       ? "text-cobalt-blue"
-                      : "text-metallic-silver hover:text-white"
+                      : "text-metallic-silver hover:text-mint-green"
                   }`}
                 >
                   {item.name}
@@ -43,11 +43,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               ))}
             </div>
             <div className="hidden md:flex items-center">
-              <button className="bg-cobalt-blue hover:bg-cobalt-blue-alt text-white font-medium text-sm px-6 py-2 transition-colors">Contact</button>
+              <button className="bg-cobalt-blue hover:bg-mint-green text-steel-gray font-medium text-sm px-6 py-2 transition-colors">Contact</button>
             </div>
             {/* Mobile menu button (not implemented yet) */}
             <div className="md:hidden">
-              <button className="text-metallic-silver hover:text-white">
+              <button className="text-metallic-silver hover:text-mint-green">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -77,15 +77,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div>
               <h4 className="font-normal mb-4 text-white font-sans">Contact</h4>
               <div className="space-y-2 font-mono">
-                <a href="mailto:aidan.pesquera@email.com" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">aidan.pesquera@email.com</a>
-                <a href="https://linkedin.com/in/aidanpesquera" className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">LinkedIn</a>
+                <a href="mailto:aidan.pesquera@email.com" className="block text-sm text-metallic-silver hover:text-mint-green transition-colors">aidan.pesquera@email.com</a>
+                <a href="https://linkedin.com/in/aidanpesquera" className="block text-sm text-metallic-silver hover:text-mint-green transition-colors">LinkedIn</a>
               </div>
             </div>
             <div>
               <h4 className="font-normal mb-4 text-white font-sans">Navigate</h4>
               <div className="space-y-2 font-mono">
                 {navigationItems.map(item => (
-                  <Link key={item.name} to={item.path} className="block text-sm text-metallic-silver hover:text-cobalt-blue transition-colors">
+                  <Link key={item.name} to={item.path} className="block text-sm text-metallic-silver hover:text-mint-green transition-colors">
                     {item.name}
                   </Link>
                 ))}
