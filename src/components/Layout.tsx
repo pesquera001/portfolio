@@ -20,10 +20,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex items-center justify-between h-20">
             {/* Logo/Monogram */}
             <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 bg-cobalt-blue flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-semibold tracking-tight text-white">
+              <span className="text-xl font-semibold tracking-tight text-bright-blue">
                 Aidan Pesquera
               </span>
             </Link>
