@@ -37,7 +37,9 @@ export default function About() {
           >
             <h2 className="text-2xl font-normal text-cobalt-blue mb-4 font-sans">What Drives Me</h2>
             <p className="mb-4 font-mono text-white">
-              I’m driven by a deep interest in operational value creation, particularly within the context of acquired companies. My work centers on understanding how businesses can be systematically optimized—through cost efficiencies, organizational redesign, and enhanced information architecture—to unlock scalable, sustainable performance. My passion lies in research, optimization, and execution—designing systems, models, and frameworks that help capital allocators and operators make smarter, faster decisions in high-stakes environments. I focus on identifying companies with potential for scale and operational enhancement, analyzing how they can be improved post-acquisition through better systems, strategy, and structure.
+              I’m driven by a deep interest in operational value creation, particularly within the context of acquired companies. My work centers on understanding how businesses can be systematically optimized—through cost efficiencies, organizational redesign, and enhanced information architecture—to unlock scalable, sustainable performance.
+
+              My passion lies in research, optimization, and execution—designing systems, models, and frameworks that help capital allocators and operators make smarter, faster decisions in high-stakes environments. I focus on identifying companies with potential for scale and operational enhancement, analyzing how they can be improved post-acquisition through better systems, strategy, and structure.
             </p>
           </motion.div>
           <motion.div
